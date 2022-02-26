@@ -1,0 +1,222 @@
+{
+    "sourceFile": "src/pages/stocks.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 51,
+            "patches": [
+                {
+                    "date": 1645866281482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645866336581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { withLayout } from '../components/layout';\n const Stocks = () => {\n   return <>Stocks</>;\n };\n \n"
+                },
+                {
+                    "date": 1645866396250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,12 @@\n import { withLayout } from '../components/layout';\n const Stocks = () => {\n-  return <>Stocks</>;\n+  return (\n+    <>\n+      <Typography variant=\"h5\" mt={2} mb={2}>\n+        Stocks Dashboard\n+      </Typography>\n+    </>\n+  );\n };\n \n export default withLayout(Stocks);\n"
+                },
+                {
+                    "date": 1645866433776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { withLayout } from '../components/layout';\n+import { Typography } from '@mui/material';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645868375888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import { withLayout } from '../components/layout';\n import { Typography } from '@mui/material';\n const Stocks = () => {\n   return (\n-    <>\n+    <Container>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-    </>\n+    </Container>\n   );\n };\n \n export default withLayout(Stocks);\n"
+                },
+                {
+                    "date": 1645868394701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { withLayout } from '../components/layout';\n-import { Typography } from '@mui/material';\n+import { Typography, Container } from '@mui/material';\n const Stocks = () => {\n   return (\n     <Container>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645868429052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import { withLayout } from '../components/layout';\n import { Typography, Container } from '@mui/material';\n const Stocks = () => {\n   return (\n-    <Container>\n+    <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-    </Container>\n+    </>\n   );\n };\n \n export default withLayout(Stocks);\n"
+                },
+                {
+                    "date": 1645868449664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { withLayout } from '../components/layout';\n-import { Typography, Container } from '@mui/material';\n+import { Typography } from '@mui/material';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645868474452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n+      <Card></Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645868491498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { withLayout } from '../components/layout';\n-import { Typography } from '@mui/material';\n+import { Card, Typography } from '@mui/material';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645868502555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card></Card>\n+      <Card>Kaka</Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645868515447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card>Kaka</Card>\n+      <Card></Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645868967219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { withLayout } from '../components/layout';\n import { Card, Typography } from '@mui/material';\n+import { styled } from '@mui/material/styles';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645868979007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card></Card>\n+      <Card>Its a card</Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645869936185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { withLayout } from '../components/layout';\n+import { withLayout, StocksSelector } from '../components/layout';\n import { Card, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n const Stocks = () => {\n   return (\n"
+                },
+                {
+                    "date": 1645869949919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,17 @@\n import { withLayout, StocksSelector } from '../components/layout';\n import { Card, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n+\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card>Its a card</Card>\n+      <Card>\n+        <StocksSelector />\n+      </Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645869979478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { withLayout, StocksSelector } from '../components/layout';\n+import { withLayout, StocksSelector } from '../components';\n import { Card, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n \n const Stocks = () => {\n"
+                },
+                {
+                    "date": 1645869994627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,15 @@\n-import { withLayout, StocksSelector } from '../components';\n+import { withLayout } from '../components/layout';\n import { Card, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n-\n+import { StocksSelector } from '../components/StocksSelector';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card>\n-        <StocksSelector />\n-      </Card>\n+      <Card>Its a card</Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645870011083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card>Its a card</Card>\n+      <Card>\n+        <StocksSelector />\n+      </Card>\n     </>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1645870023436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { withLayout } from '../components/layout';\n import { Card, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n-import { StocksSelector } from '../components/StocksSelector';\n+import StocksSelector from '../components/StocksSelector';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645870249621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card>\n+      <Card sx={{ minWidth: 275 }}>\n         <StocksSelector />\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870270469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card sx={{ minWidth: 275 }}>\n+      <Card sx={{ maxWidth: 275 }}>\n         <StocksSelector />\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870279409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card sx={{ maxWidth: 275 }}>\n+      <Card sx={{ mx: 275 }}>\n         <StocksSelector />\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870284676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card sx={{ mx: 275 }}>\n+      <Card sx={{ maxWidth: 275 }}>\n         <StocksSelector />\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870403160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card sx={{ maxWidth: 275 }}>\n+      <Card variant=\"outlined\">\n         <StocksSelector />\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870430916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n-      <Card variant=\"outlined\">\n+      <Card>\n         <StocksSelector />\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870804667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { withLayout } from '../components/layout';\n-import { Card, Typography } from '@mui/material';\n+import { Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n const Stocks = () => {\n   return (\n"
+                },
+                {
+                    "date": 1645870819073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,11 @@\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n       <Card>\n-        <StocksSelector />\n+        <CardContent>\n+          <StocksSelector />\n+        </CardContent>\n       </Card>\n     </>\n   );\n };\n"
+                },
+                {
+                    "date": 1645870877877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { withLayout } from '../components/layout';\n import { Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n+import StartStopBtns from '../components/StartStopBtns';\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645870889648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n+\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n@@ -11,8 +12,9 @@\n       </Typography>\n       <Card>\n         <CardContent>\n           <StocksSelector />\n+          <StartStopBtns />\n         </CardContent>\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645870938741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,13 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n+        <Grid container spacing={2}>\n           <StocksSelector />\n           <StartStopBtns />\n         </CardContent>\n+        </Grid>\n       </Card>\n     </>\n   );\n };\n"
+                },
+                {
+                    "date": 1645870948185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { withLayout } from '../components/layout';\n-import { Card, CardContent, Typography } from '@mui/material';\n+import { Grid,Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n"
+                },
+                {
+                    "date": 1645870975087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { withLayout } from '../components/layout';\n-import { Grid,Card, CardContent, Typography } from '@mui/material';\n+import { Grid, Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n@@ -11,13 +11,13 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-        <Grid container spacing={2}>\n-          <StocksSelector />\n-          <StartStopBtns />\n+          <Grid container spacing={2}>\n+            <StocksSelector />\n+            <StartStopBtns />\n+          </Grid>\n         </CardContent>\n-        </Grid>\n       </Card>\n     </>\n   );\n };\n"
+                },
+                {
+                    "date": 1645870987087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-          <Grid container spacing={2}>\n+          <Grid spacing={2}>\n             <StocksSelector />\n             <StartStopBtns />\n           </Grid>\n         </CardContent>\n"
+                },
+                {
+                    "date": 1645870995241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-          <Grid spacing={2}>\n+          <Grid>\n             <StocksSelector />\n             <StartStopBtns />\n           </Grid>\n         </CardContent>\n"
+                },
+                {
+                    "date": 1645871067189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,10 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-          <Grid>\n-            <StocksSelector />\n-            <StartStopBtns />\n-          </Grid>\n+          <StocksSelector />\n+          <StartStopBtns />\n         </CardContent>\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645872028890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,15 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n+const RootStyle = styled(Toolbar)(({ theme }) => ({\n+  height: 96,\n+  display: 'flex',\n+  justifyContent: 'space-between',\n+  padding: theme.spacing(0, 1, 0, 3),\n+}));\n+\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n"
+                },
+                {
+                    "date": 1645872045971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = styled(Toolbar)(({ theme }) => ({\n+const RootStyle = styled(Toolbar) => ({\n   height: 96,\n   display: 'flex',\n   justifyContent: 'space-between',\n   padding: theme.spacing(0, 1, 0, 3),\n"
+                },
+                {
+                    "date": 1645872082891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = styled(Toolbar) => ({\n+const RootStyle = styled(Toolbar)(({ theme }) => ({\n   height: 96,\n   display: 'flex',\n   justifyContent: 'space-between',\n   padding: theme.spacing(0, 1, 0, 3),\n@@ -18,8 +18,16 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n+        <RootStyle\n+      sx={{\n+        ...(numSelected > 0 && {\n+          color: 'primary.main',\n+          bgcolor: 'primary.lighter'\n+        })\n+      }}\n+    >\n           <StocksSelector />\n           <StartStopBtns />\n         </CardContent>\n       </Card>\n"
+                },
+                {
+                    "date": 1645872095480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,18 +18,19 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-        <RootStyle\n-      sx={{\n-        ...(numSelected > 0 && {\n-          color: 'primary.main',\n-          bgcolor: 'primary.lighter'\n-        })\n-      }}\n-    >\n-          <StocksSelector />\n-          <StartStopBtns />\n+          <RootStyle\n+            sx={{\n+              ...(numSelected > 0 && {\n+                color: 'primary.main',\n+                bgcolor: 'primary.lighter',\n+              }),\n+            }}\n+          >\n+            <StocksSelector />\n+            <StartStopBtns />\n+          </RootStyle>\n         </CardContent>\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645872110496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n       <Card>\n         <CardContent>\n           <RootStyle\n             sx={{\n-              ...(numSelected > 0 && {\n+              {\n                 color: 'primary.main',\n                 bgcolor: 'primary.lighter',\n               }),\n             }}\n"
+                },
+                {
+                    "date": 1645872123067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,10 @@\n       <Card>\n         <CardContent>\n           <RootStyle\n             sx={{\n-              {\n-                color: 'primary.main',\n-                bgcolor: 'primary.lighter',\n-              }),\n+              color: 'primary.main',\n+              bgcolor: 'primary.lighter',\n             }}\n           >\n             <StocksSelector />\n             <StartStopBtns />\n"
+                },
+                {
+                    "date": 1645872151291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,14 +18,9 @@\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-          <RootStyle\n-            sx={{\n-              color: 'primary.main',\n-              bgcolor: 'primary.lighter',\n-            }}\n-          >\n+          <RootStyle>\n             <StocksSelector />\n             <StartStopBtns />\n           </RootStyle>\n         </CardContent>\n"
+                },
+                {
+                    "date": 1645872188689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = styled(Toolbar)(({ theme }) => ({\n+const RootStyle = styled => ({\n   height: 96,\n   display: 'flex',\n   justifyContent: 'space-between',\n   padding: theme.spacing(0, 1, 0, 3),\n"
+                },
+                {
+                    "date": 1645872195684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n const RootStyle = styled => ({\n   height: 96,\n   display: 'flex',\n   justifyContent: 'space-between',\n-  padding: theme.spacing(0, 1, 0, 3),\n }));\n \n const Stocks = () => {\n   return (\n"
+                },
+                {
+                    "date": 1645872213437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,12 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = styled => ({\n-  height: 96,\n+const RootStyle = (styled) => ({\n   display: 'flex',\n   justifyContent: 'space-between',\n-}));\n+});\n \n const Stocks = () => {\n   return (\n     <>\n"
+                },
+                {
+                    "date": 1645872258248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = (styled) => ({\n+const RootStyle = (styled()) => ({\n   display: 'flex',\n   justifyContent: 'space-between',\n });\n \n"
+                },
+                {
+                    "date": 1645872270049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = (styled()) => ({\n+const RootStyle = styled() => ({\n   display: 'flex',\n   justifyContent: 'space-between',\n });\n \n"
+                },
+                {
+                    "date": 1645872427280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,25 +3,18 @@\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n \n-const RootStyle = styled() => ({\n-  display: 'flex',\n-  justifyContent: 'space-between',\n-});\n-\n const Stocks = () => {\n   return (\n     <>\n       <Typography variant=\"h5\" mt={2} mb={2}>\n         Stocks Dashboard\n       </Typography>\n       <Card>\n         <CardContent>\n-          <RootStyle>\n-            <StocksSelector />\n-            <StartStopBtns />\n-          </RootStyle>\n+          <StocksSelector />\n+          <StartStopBtns />\n         </CardContent>\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645872543093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n       <Card>\n         <CardContent>\n           <StocksSelector />\n           <StartStopBtns />\n+          <StocksGrid />\n         </CardContent>\n       </Card>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645872557177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { Grid, Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n+import StocksGrid from '../components/StartStopBtns';\n \n const Stocks = () => {\n   return (\n     <>\n"
+                },
+                {
+                    "date": 1645872563641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { Grid, Card, CardContent, Typography } from '@mui/material';\n import { styled } from '@mui/material/styles';\n import StocksSelector from '../components/StocksSelector';\n import StartStopBtns from '../components/StartStopBtns';\n-import StocksGrid from '../components/StartStopBtns';\n+import StocksGrid from '../components/StocksGrid';\n \n const Stocks = () => {\n   return (\n     <>\n"
+                }
+            ],
+            "date": 1645866281482,
+            "name": "Commit-0",
+            "content": "const Stocks = () => {\n  return <>Stocks</>;\n};\n\nexport default withLayout(Stocks);\n"
+        }
+    ]
+}

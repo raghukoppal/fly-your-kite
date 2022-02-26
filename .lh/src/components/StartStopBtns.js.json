@@ -1,0 +1,138 @@
+{
+    "sourceFile": "src/components/StartStopBtns.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 30,
+            "patches": [
+                {
+                    "date": 1645852885340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645852975555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-\n+export default function StocksSelector() {}\n"
+                },
+                {
+                    "date": 1645852994399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-export default function StocksSelector() {}\n+export default function StartStopBtns() {}\n"
+                },
+                {
+                    "date": 1645853008147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-export default function StartStopBtns() {}\n+export default function StartStopBtns() {\n+  return <div></div>;\n+}\n"
+                },
+                {
+                    "date": 1645853065698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,9 @@\n export default function StartStopBtns() {\n-  return <div></div>;\n+  return (\n+    <div>\n+      <Button variant=\"contained\" endIcon={<SendIcon />}>\n+        Send\n+      </Button>\n+    </div>\n+  );\n }\n"
+                },
+                {
+                    "date": 1645853080653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+import * as React from 'react';\n+import Button from '@mui/material/Button';\n+import DeleteIcon from '@mui/icons-material/Delete';\n+import SendIcon from '@mui/icons-material/Send';\n+import Stack from '@mui/material/Stack';\n export default function StartStopBtns() {\n   return (\n     <div>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n"
+                },
+                {
+                    "date": 1645853097441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,10 @@\n     <div>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n         Send\n       </Button>\n+      <Button variant=\"contained\" endIcon={<SendIcon />}>\n+        Send\n+      </Button>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1645853120306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,16 @@\n import Button from '@mui/material/Button';\n import DeleteIcon from '@mui/icons-material/Delete';\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n-export default function StartStopBtns() {\n+export default function IconLabelButtons() {\n   return (\n-    <div>\n-      <Button variant=\"contained\" endIcon={<SendIcon />}>\n-        Send\n+    <Stack direction=\"row\" spacing={2}>\n+      <Button variant=\"outlined\" startIcon={<DeleteIcon />}>\n+        Delete\n       </Button>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n         Send\n       </Button>\n-    </div>\n+    </Stack>\n   );\n }\n"
+                },
+                {
+                    "date": 1645853132045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Button from '@mui/material/Button';\n import DeleteIcon from '@mui/icons-material/Delete';\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n-export default function IconLabelButtons() {\n+export default function StartStopBtns() {\n   return (\n     <Stack direction=\"row\" spacing={2}>\n       <Button variant=\"outlined\" startIcon={<DeleteIcon />}>\n         Delete\n"
+                },
+                {
+                    "date": 1645853194416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,12 @@\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n export default function StartStopBtns() {\n   return (\n-    <Stack direction=\"row\" spacing={2}>\n       <Button variant=\"outlined\" startIcon={<DeleteIcon />}>\n         Delete\n       </Button>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n         Send\n       </Button>\n-    </Stack>\n   );\n }\n"
+                },
+                {
+                    "date": 1645853212260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,14 @@\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n export default function StartStopBtns() {\n   return (\n+    <>\n       <Button variant=\"outlined\" startIcon={<DeleteIcon />}>\n         Delete\n       </Button>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n         Send\n       </Button>\n+    </>\n   );\n }\n"
+                },
+                {
+                    "date": 1645853327647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n export default function StartStopBtns() {\n   return (\n     <>\n       <Button variant=\"outlined\" startIcon={<DeleteIcon />}>\n-        Delete\n+        Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n-        Send\n+        Stop Trading\n       </Button>\n     </>\n   );\n }\n"
+                },
+                {
+                    "date": 1645853419507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,13 @@\n import Button from '@mui/material/Button';\n import DeleteIcon from '@mui/icons-material/Delete';\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n+import MultipleStopIcon from '@mui/icons-material/MultipleStop';\n export default function StartStopBtns() {\n   return (\n     <>\n-      <Button variant=\"outlined\" startIcon={<DeleteIcon />}>\n+      <Button variant=\"outlined\" startIcon={<MultipleStopIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<SendIcon />}>\n         Stop Trading\n"
+                },
+                {
+                    "date": 1645853426606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <>\n       <Button variant=\"outlined\" startIcon={<MultipleStopIcon />}>\n         Start Trading\n       </Button>\n-      <Button variant=\"contained\" endIcon={<SendIcon />}>\n+      <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n         Stop Trading\n       </Button>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645853636046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import DeleteIcon from '@mui/icons-material/Delete';\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n import MultipleStopIcon from '@mui/icons-material/MultipleStop';\n+import StartIcon from '@mui/icons-material/Start';\n export default function StartStopBtns() {\n   return (\n     <>\n       <Button variant=\"outlined\" startIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645853642616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n export default function StartStopBtns() {\n   return (\n     <>\n-      <Button variant=\"outlined\" startIcon={<MultipleStopIcon />}>\n+      <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n         Stop Trading\n"
+                },
+                {
+                    "date": 1645854784543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n import MultipleStopIcon from '@mui/icons-material/MultipleStop';\n import StartIcon from '@mui/icons-material/Start';\n export default function StartStopBtns() {\n   return (\n-    <>\n+    <FormControl sx={{ m: 1, minWidth: 220 }}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n         Stop Trading\n       </Button>\n-    </>\n+    </FormControl>\n   );\n }\n"
+                },
+                {
+                    "date": 1645854795861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import SendIcon from '@mui/icons-material/Send';\n import Stack from '@mui/material/Stack';\n import MultipleStopIcon from '@mui/icons-material/MultipleStop';\n import StartIcon from '@mui/icons-material/Start';\n+import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n     <FormControl sx={{ m: 1, minWidth: 220 }}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n"
+                },
+                {
+                    "date": 1645854822696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <FormControl sx={{ m: 1, minWidth: 220 }}>\n+    <FormControl sx={{ m: 1 }}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645854837997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <FormControl sx={{ m: 1 }}>\n+    <FormControl sx={{ m: 1, minWidth: 400 }}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645854852309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <FormControl sx={{ m: 1, minWidth: 400 }}>\n+    <FormControl sx={{ m: 1, minWidth: 220 }}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645854869611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <FormControl sx={{ m: 1, minWidth: 220 }}>\n+    <>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n         Stop Trading\n       </Button>\n-    </FormControl>\n+    </>\n   );\n }\n"
+                },
+                {
+                    "date": 1645860032712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n-      <Button variant=\"contained\" endIcon={<MultipleStopIcon />}>\n+      <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n         Stop Trading\n       </Button>\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645863525119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <>\n+    <Stack spacing={2} direction=\"row\">\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n         Stop Trading\n       </Button>\n-    </>\n+    </Stack>\n   );\n }\n"
+                },
+                {
+                    "date": 1645863620880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <Stack spacing={2} direction=\"row\">\n+    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\">\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645863742526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,14 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\">\n+    <Stack\n+      spacing={2}\n+      direction=\"row\"\n+      justifyContent=\"flex-end\"\n+      alignItems=\"center\"\n+    >\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645863769367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <Stack\n       spacing={2}\n       direction=\"row\"\n       justifyContent=\"flex-end\"\n-      alignItems=\"center\"\n+      p=2\n     >\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n"
+                },
+                {
+                    "date": 1645863776371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <Stack\n-      spacing={2}\n-      direction=\"row\"\n-      justifyContent=\"flex-end\"\n-      p=2\n-    >\n+    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\" p={2}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645863868313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\" p={2}>\n+    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\" my={2}>\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645864201707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\" my={2}>\n+    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\">\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n"
+                },
+                {
+                    "date": 1645872453292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import StartIcon from '@mui/icons-material/Start';\n import FormControl from '@mui/material/FormControl';\n export default function StartStopBtns() {\n   return (\n-    <Stack spacing={2} direction=\"row\" justifyContent=\"flex-end\">\n+    <Stack spacing={2} direction=\"row\">\n       <Button variant=\"outlined\" startIcon={<StartIcon />}>\n         Start Trading\n       </Button>\n       <Button variant=\"contained\" color=\"error\" endIcon={<MultipleStopIcon />}>\n"
+                }
+            ],
+            "date": 1645852885340,
+            "name": "Commit-0",
+            "content": "\n"
+        }
+    ]
+}

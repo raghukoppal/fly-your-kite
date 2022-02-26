@@ -2,12 +2,19 @@
   "name": "fly-your-kite",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.3.1",
+    "@mui/x-data-grid-pro": "latest",
+    "@mui/x-data-grid-generator": "latest",
+    "@mui/x-data-grid": "latest",
     "next": "12.0.9",
     "react": "17.0.2",
     "react-dom": "17.0.2"

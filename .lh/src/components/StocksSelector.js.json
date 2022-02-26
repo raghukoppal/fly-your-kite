@@ -1,0 +1,118 @@
+{
+    "sourceFile": "src/components/StocksSelector.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1645848044506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645848055309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n import * as React from 'react';\n+import InputLabel from '@mui/material/InputLabel';\n+import MenuItem from '@mui/material/MenuItem';\n+import FormHelperText from '@mui/material/FormHelperText';\n+import FormControl from '@mui/material/FormControl';\n+import Select from '@mui/material/Select';\n"
+                },
+                {
+                    "date": 1645848089617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,51 @@\n import MenuItem from '@mui/material/MenuItem';\n import FormHelperText from '@mui/material/FormHelperText';\n import FormControl from '@mui/material/FormControl';\n import Select from '@mui/material/Select';\n+\n+export default function SelectLabels() {\n+  const [age, setAge] = React.useState('');\n+\n+  const handleChange = (event) => {\n+    setAge(event.target.value);\n+  };\n+\n+  return (\n+    <div>\n+      <FormControl sx={{ m: 1, minWidth: 120 }}>\n+        <InputLabel id=\"demo-simple-select-helper-label\">Age</InputLabel>\n+        <Select\n+          labelId=\"demo-simple-select-helper-label\"\n+          id=\"demo-simple-select-helper\"\n+          value={age}\n+          label=\"Age\"\n+          onChange={handleChange}\n+        >\n+          <MenuItem value=\"\">\n+            <em>None</em>\n+          </MenuItem>\n+          <MenuItem value={10}>Ten</MenuItem>\n+          <MenuItem value={20}>Twenty</MenuItem>\n+          <MenuItem value={30}>Thirty</MenuItem>\n+        </Select>\n+        <FormHelperText>With label + helper text</FormHelperText>\n+      </FormControl>\n+      <FormControl sx={{ m: 1, minWidth: 120 }}>\n+        <Select\n+          value={age}\n+          onChange={handleChange}\n+          displayEmpty\n+          inputProps={{ 'aria-label': 'Without label' }}\n+        >\n+          <MenuItem value=\"\">\n+            <em>None</em>\n+          </MenuItem>\n+          <MenuItem value={10}>Ten</MenuItem>\n+          <MenuItem value={20}>Twenty</MenuItem>\n+          <MenuItem value={30}>Thirty</MenuItem>\n+        </Select>\n+        <FormHelperText>Without label</FormHelperText>\n+      </FormControl>\n+    </div>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1645848104712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import FormHelperText from '@mui/material/FormHelperText';\n import FormControl from '@mui/material/FormControl';\n import Select from '@mui/material/Select';\n \n-export default function SelectLabels() {\n+export default function StocksSelector() {\n   const [age, setAge] = React.useState('');\n \n   const handleChange = (event) => {\n     setAge(event.target.value);\n"
+                },
+                {
+                    "date": 1645848222038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,23 +31,7 @@\n           <MenuItem value={30}>Thirty</MenuItem>\n         </Select>\n         <FormHelperText>With label + helper text</FormHelperText>\n       </FormControl>\n-      <FormControl sx={{ m: 1, minWidth: 120 }}>\n-        <Select\n-          value={age}\n-          onChange={handleChange}\n-          displayEmpty\n-          inputProps={{ 'aria-label': 'Without label' }}\n-        >\n-          <MenuItem value=\"\">\n-            <em>None</em>\n-          </MenuItem>\n-          <MenuItem value={10}>Ten</MenuItem>\n-          <MenuItem value={20}>Twenty</MenuItem>\n-          <MenuItem value={30}>Thirty</MenuItem>\n-        </Select>\n-        <FormHelperText>Without label</FormHelperText>\n-      </FormControl>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1645848236874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,8 @@\n           <MenuItem value={10}>Ten</MenuItem>\n           <MenuItem value={20}>Twenty</MenuItem>\n           <MenuItem value={30}>Thirty</MenuItem>\n         </Select>\n-        <FormHelperText>With label + helper text</FormHelperText>\n       </FormControl>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1645852441983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         <Select\n           labelId=\"demo-simple-select-helper-label\"\n           id=\"demo-simple-select-helper\"\n           value={age}\n-          label=\"Age\"\n+          label=\"Stocks\"\n           onChange={handleChange}\n         >\n           <MenuItem value=\"\">\n             <em>None</em>\n"
+                },
+                {
+                    "date": 1645852468797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import FormControl from '@mui/material/FormControl';\n import Select from '@mui/material/Select';\n \n export default function StocksSelector() {\n-  const [age, setAge] = React.useState('');\n+  const [stock, setStock] = React.useState('');\n \n   const handleChange = (event) => {\n     setAge(event.target.value);\n   };\n"
+                },
+                {
+                    "date": 1645852477740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n   return (\n     <div>\n       <FormControl sx={{ m: 1, minWidth: 120 }}>\n-        <InputLabel id=\"demo-simple-select-helper-label\">Age</InputLabel>\n+        <InputLabel id=\"demo-simple-select-helper-label\">Stocks</InputLabel>\n         <Select\n           labelId=\"demo-simple-select-helper-label\"\n           id=\"demo-simple-select-helper\"\n           value={age}\n"
+                },
+                {
+                    "date": 1645852483239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         <InputLabel id=\"demo-simple-select-helper-label\">Stocks</InputLabel>\n         <Select\n           labelId=\"demo-simple-select-helper-label\"\n           id=\"demo-simple-select-helper\"\n-          value={age}\n+          value={stock}\n           label=\"Stocks\"\n           onChange={handleChange}\n         >\n           <MenuItem value=\"\">\n"
+                },
+                {
+                    "date": 1645852544444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,11 @@\n         >\n           <MenuItem value=\"\">\n             <em>None</em>\n           </MenuItem>\n-          <MenuItem value={10}>Ten</MenuItem>\n-          <MenuItem value={20}>Twenty</MenuItem>\n-          <MenuItem value={30}>Thirty</MenuItem>\n+          <MenuItem value={techm}>TECHM</MenuItem>\n+          <MenuItem value={infy}>INFY</MenuItem>\n+          <MenuItem value={hdfc}>HDFC</MenuItem>\n         </Select>\n       </FormControl>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1645852564344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,11 @@\n         >\n           <MenuItem value=\"\">\n             <em>None</em>\n           </MenuItem>\n-          <MenuItem value={techm}>TECHM</MenuItem>\n-          <MenuItem value={infy}>INFY</MenuItem>\n-          <MenuItem value={hdfc}>HDFC</MenuItem>\n+          <MenuItem value={'techm'}>TECHM</MenuItem>\n+          <MenuItem value={'infy'}>INFY</MenuItem>\n+          <MenuItem value={'hdfc'}>HDFC</MenuItem>\n         </Select>\n       </FormControl>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1645852581895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export default function StocksSelector() {\n   const [stock, setStock] = React.useState('');\n \n   const handleChange = (event) => {\n-    setAge(event.target.value);\n+    setStock(event.target.value);\n   };\n \n   return (\n     <div>\n"
+                },
+                {
+                    "date": 1645852597754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   };\n \n   return (\n     <div>\n-      <FormControl sx={{ m: 1, minWidth: 120 }}>\n+      <FormControl sx={{ m: 1, minWidth: 220 }}>\n         <InputLabel id=\"demo-simple-select-helper-label\">Stocks</InputLabel>\n         <Select\n           labelId=\"demo-simple-select-helper-label\"\n           id=\"demo-simple-select-helper\"\n"
+                },
+                {
+                    "date": 1645852642867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,25 +12,23 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <div>\n-      <FormControl sx={{ m: 1, minWidth: 220 }}>\n-        <InputLabel id=\"demo-simple-select-helper-label\">Stocks</InputLabel>\n-        <Select\n-          labelId=\"demo-simple-select-helper-label\"\n-          id=\"demo-simple-select-helper\"\n-          value={stock}\n-          label=\"Stocks\"\n-          onChange={handleChange}\n-        >\n-          <MenuItem value=\"\">\n-            <em>None</em>\n-          </MenuItem>\n-          <MenuItem value={'techm'}>TECHM</MenuItem>\n-          <MenuItem value={'infy'}>INFY</MenuItem>\n-          <MenuItem value={'hdfc'}>HDFC</MenuItem>\n-        </Select>\n-      </FormControl>\n-    </div>\n+    <FormControl sx={{ m: 1, minWidth: 220 }}>\n+      <InputLabel id=\"demo-simple-select-helper-label\">Stocks</InputLabel>\n+      <Select\n+        labelId=\"demo-simple-select-helper-label\"\n+        id=\"demo-simple-select-helper\"\n+        value={stock}\n+        label=\"Stocks\"\n+        onChange={handleChange}\n+      >\n+        <MenuItem value=\"\">\n+          <em>None</em>\n+        </MenuItem>\n+        <MenuItem value={'techm'}>TECHM</MenuItem>\n+        <MenuItem value={'infy'}>INFY</MenuItem>\n+        <MenuItem value={'hdfc'}>HDFC</MenuItem>\n+      </Select>\n+    </FormControl>\n   );\n }\n"
+                },
+                {
+                    "date": 1645852733842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,11 @@\n   };\n \n   return (\n     <FormControl sx={{ m: 1, minWidth: 220 }}>\n-      <InputLabel id=\"demo-simple-select-helper-label\">Stocks</InputLabel>\n+      <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n-        labelId=\"demo-simple-select-helper-label\"\n+        labelId=\"stock-select-label\"\n         id=\"demo-simple-select-helper\"\n         value={stock}\n         label=\"Stocks\"\n         onChange={handleChange}\n"
+                },
+                {
+                    "date": 1645852742955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     <FormControl sx={{ m: 1, minWidth: 220 }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n-        id=\"demo-simple-select-helper\"\n+        id=\"stock-select\"\n         value={stock}\n         label=\"Stocks\"\n         onChange={handleChange}\n       >\n"
+                },
+                {
+                    "date": 1645860373062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ m: 1, minWidth: 220 }}>\n+    <FormControl sx={{ minWidth: 220 }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860416929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ minWidth: 220 }}>\n+    <FormControl sx={{ minWidth: 180 }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860441287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ minWidth: 180 }}>\n+    <FormControl>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860448066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl>\n+    <FormControl sx={{ minWidth: 180 }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860460676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ minWidth: 180 }}>\n+    <FormControl sx={{ minWidth: 100% }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860469274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ minWidth: 100% }}>\n+    <FormControl sx={{ minWidth: '100%' }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860497368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ minWidth: '100%' }}>\n+    <FormControl sx={{ minWidth: 180 }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860515409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl sx={{ minWidth: 180 }}>\n+    <FormControl>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                },
+                {
+                    "date": 1645860623910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     setStock(event.target.value);\n   };\n \n   return (\n-    <FormControl>\n+    <FormControl sx={{ minWidth: 220 }}>\n       <InputLabel id=\"stock-select-label\">Stocks</InputLabel>\n       <Select\n         labelId=\"stock-select-label\"\n         id=\"stock-select\"\n"
+                }
+            ],
+            "date": 1645848044506,
+            "name": "Commit-0",
+            "content": "import * as React from 'react';\n"
+        }
+    ]
+}

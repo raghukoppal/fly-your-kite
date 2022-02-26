@@ -1,0 +1,238 @@
+{
+    "sourceFile": "src/components/footer/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 55,
+            "patches": [
+                {
+                    "date": 1644681752609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644681786633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n-export default Footer = () => {};\n+export default Footer = () => {\n+  return (\n+    <footer>\n+      <Box>Footer</Box>\n+    </footer>\n+  );\n+};\n"
+                },
+                {
+                    "date": 1644687280571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { Box } from '@mui/material';\n export default Footer = () => {\n   return (\n     <footer>\n       <Box>Footer</Box>\n"
+                },
+                {
+                    "date": 1644687317173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import { Box } from '@mui/material';\n-export default Footer = () => {\n+const Footer = () => {\n   return (\n     <footer>\n       <Box>Footer</Box>\n     </footer>\n   );\n };\n+\n+export default Footer;\n"
+                },
+                {
+                    "date": 1644687349020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,13 @@\n import { Box } from '@mui/material';\n const Footer = () => {\n   return (\n     <footer>\n-      <Box>Footer</Box>\n+      <Boxsx={{\n+        display: 'flex',\n+        flexDirection: 'column',\n+        minHeight: '100vh',\n+      }}>Footer</Box>\n     </footer>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1644687382910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,17 @@\n import { Box } from '@mui/material';\n const Footer = () => {\n   return (\n     <footer>\n-      <Boxsx={{\n-        display: 'flex',\n-        flexDirection: 'column',\n-        minHeight: '100vh',\n-      }}>Footer</Box>\n+      <Box\n+        sx={{\n+          display: 'flex',\n+          flexDirection: 'column',\n+          minHeight: '100vh',\n+        }}\n+      >\n+        Footer\n+      </Box>\n     </footer>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1644687407579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { Box } from '@mui/material';\n+import CssBaseline from '@mui/material/CssBaseline';\n const Footer = () => {\n   return (\n     <footer>\n       <Box\n"
+                },
+                {
+                    "date": 1644687428123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n           minHeight: '100vh',\n         }}\n       >\n         Footer\n+        <CssBaseline />\n       </Box>\n     </footer>\n   );\n };\n"
+                },
+                {
+                    "date": 1644687517653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,24 @@\n-import { Box } from '@mui/material';\n+import * as React from 'react';\n import CssBaseline from '@mui/material/CssBaseline';\n+import Box from '@mui/material/Box';\n+import Typography from '@mui/material/Typography';\n+import Container from '@mui/material/Container';\n+import Link from '@mui/material/Link';\n+\n+function Copyright() {\n+  return (\n+    <Typography variant=\"body2\" color=\"text.secondary\">\n+      {'Copyright © '}\n+      <Link color=\"inherit\" href=\"https://mui.com/\">\n+        Your Website\n+      </Link>{' '}\n+      {new Date().getFullYear()}\n+      {'.'}\n+    </Typography>\n+  );\n+}\n+\n const Footer = () => {\n   return (\n     <footer>\n       <Box\n@@ -9,10 +27,38 @@\n           flexDirection: 'column',\n           minHeight: '100vh',\n         }}\n       >\n-        Footer\n         <CssBaseline />\n+        <Container component=\"main\" sx={{ mt: 8, mb: 2 }} maxWidth=\"sm\">\n+          <Typography variant=\"h2\" component=\"h1\" gutterBottom>\n+            Sticky footer\n+          </Typography>\n+          <Typography variant=\"h5\" component=\"h2\" gutterBottom>\n+            {'Pin a footer to the bottom of the viewport.'}\n+            {'The footer will move as the main element of the page grows.'}\n+          </Typography>\n+          <Typography variant=\"body1\">Sticky footer placeholder.</Typography>\n+        </Container>\n+        <Box\n+          component=\"footer\"\n+          sx={{\n+            py: 3,\n+            px: 2,\n+            mt: 'auto',\n+            backgroundColor: (theme) =>\n+              theme.palette.mode === 'light'\n+                ? theme.palette.grey[200]\n+                : theme.palette.grey[800],\n+          }}\n+        >\n+          <Container maxWidth=\"sm\">\n+            <Typography variant=\"body1\">\n+              My sticky footer can be found here.\n+            </Typography>\n+            <Copyright />\n+          </Container>\n+        </Box>\n       </Box>\n     </footer>\n   );\n };\n"
+                },
+                {
+                    "date": 1644687546256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,18 +28,9 @@\n           minHeight: '100vh',\n         }}\n       >\n         <CssBaseline />\n-        <Container component=\"main\" sx={{ mt: 8, mb: 2 }} maxWidth=\"sm\">\n-          <Typography variant=\"h2\" component=\"h1\" gutterBottom>\n-            Sticky footer\n-          </Typography>\n-          <Typography variant=\"h5\" component=\"h2\" gutterBottom>\n-            {'Pin a footer to the bottom of the viewport.'}\n-            {'The footer will move as the main element of the page grows.'}\n-          </Typography>\n-          <Typography variant=\"body1\">Sticky footer placeholder.</Typography>\n-        </Container>\n+\n         <Box\n           component=\"footer\"\n           sx={{\n             py: 3,\n"
+                },
+                {
+                    "date": 1644687583713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,19 +28,15 @@\n           minHeight: '100vh',\n         }}\n       >\n         <CssBaseline />\n-\n         <Box\n           component=\"footer\"\n           sx={{\n             py: 3,\n             px: 2,\n             mt: 'auto',\n-            backgroundColor: (theme) =>\n-              theme.palette.mode === 'light'\n-                ? theme.palette.grey[200]\n-                : theme.palette.grey[800],\n+            backgroundColor: 'red',\n           }}\n         >\n           <Container maxWidth=\"sm\">\n             <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644687634870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n           flexDirection: 'column',\n           minHeight: '100vh',\n         }}\n       >\n-        <CssBaseline />\n+        {/* <CssBaseline /> */}\n         <Box\n           component=\"footer\"\n           sx={{\n             py: 3,\n"
+                },
+                {
+                    "date": 1644687641258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,14 +37,12 @@\n             mt: 'auto',\n             backgroundColor: 'red',\n           }}\n         >\n-          <Container maxWidth=\"sm\">\n-            <Typography variant=\"body1\">\n-              My sticky footer can be found here.\n-            </Typography>\n-            <Copyright />\n-          </Container>\n+          <Typography variant=\"body1\">\n+            My sticky footer can be found here.\n+          </Typography>\n+          <Copyright />\n         </Box>\n       </Box>\n     </footer>\n   );\n"
+                },
+                {
+                    "date": 1644687664159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,22 +28,13 @@\n           minHeight: '100vh',\n         }}\n       >\n         {/* <CssBaseline /> */}\n-        <Box\n-          component=\"footer\"\n-          sx={{\n-            py: 3,\n-            px: 2,\n-            mt: 'auto',\n-            backgroundColor: 'red',\n-          }}\n-        >\n-          <Typography variant=\"body1\">\n-            My sticky footer can be found here.\n-          </Typography>\n-          <Copyright />\n-        </Box>\n+\n+        <Typography variant=\"body1\">\n+          My sticky footer can be found here.\n+        </Typography>\n+        <Copyright />\n       </Box>\n     </footer>\n   );\n };\n"
+                },
+                {
+                    "date": 1644687676873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,8 @@\n           flexDirection: 'column',\n           minHeight: '100vh',\n         }}\n       >\n-        {/* <CssBaseline /> */}\n-\n         <Typography variant=\"body1\">\n           My sticky footer can be found here.\n         </Typography>\n         <Copyright />\n"
+                },
+                {
+                    "date": 1644687693010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,8 @@\n       <Box\n         sx={{\n           display: 'flex',\n           flexDirection: 'column',\n-          minHeight: '100vh',\n         }}\n       >\n         <Typography variant=\"body1\">\n           My sticky footer can be found here.\n"
+                },
+                {
+                    "date": 1644687789932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,12 +26,27 @@\n           display: 'flex',\n           flexDirection: 'column',\n         }}\n       >\n-        <Typography variant=\"body1\">\n-          My sticky footer can be found here.\n-        </Typography>\n-        <Copyright />\n+        <Box\n+          component=\"footer\"\n+          sx={{\n+            py: 3,\n+            px: 2,\n+            mt: 'auto',\n+            backgroundColor: (theme) =>\n+              theme.palette.mode === 'light'\n+                ? theme.palette.grey[200]\n+                : theme.palette.grey[800],\n+          }}\n+        >\n+          <Container maxWidth=\"sm\">\n+            <Typography variant=\"body1\">\n+              My sticky footer can be found here.\n+            </Typography>\n+            <Copyright />\n+          </Container>\n+        </Box>\n       </Box>\n     </footer>\n   );\n };\n"
+                },
+                {
+                    "date": 1644687802681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,12 +32,9 @@\n           sx={{\n             py: 3,\n             px: 2,\n             mt: 'auto',\n-            backgroundColor: (theme) =>\n-              theme.palette.mode === 'light'\n-                ? theme.palette.grey[200]\n-                : theme.palette.grey[800],\n+            backgroundColor: 'yellow',\n           }}\n         >\n           <Container maxWidth=\"sm\">\n             <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644687817717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,8 @@\n             mt: 'auto',\n             backgroundColor: 'yellow',\n           }}\n         >\n-          <Container maxWidth=\"sm\">\n             <Typography variant=\"body1\">\n               My sticky footer can be found here.\n             </Typography>\n             <Copyright />\n"
+                },
+                {
+                    "date": 1644687834184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,13 +35,12 @@\n             mt: 'auto',\n             backgroundColor: 'yellow',\n           }}\n         >\n-            <Typography variant=\"body1\">\n-              My sticky footer can be found here.\n-            </Typography>\n-            <Copyright />\n-          </Container>\n+          <Typography variant=\"body1\">\n+            My sticky footer can be found here.\n+          </Typography>\n+          <Copyright />\n         </Box>\n       </Box>\n     </footer>\n   );\n"
+                },
+                {
+                    "date": 1644687856346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,31 +19,29 @@\n }\n \n const Footer = () => {\n   return (\n-    <footer>\n+    <Box\n+      sx={{\n+        display: 'flex',\n+        flexDirection: 'column',\n+      }}\n+    >\n       <Box\n+        component=\"footer\"\n         sx={{\n-          display: 'flex',\n-          flexDirection: 'column',\n+          py: 3,\n+          px: 2,\n+          mt: 'auto',\n+          backgroundColor: 'yellow',\n         }}\n       >\n-        <Box\n-          component=\"footer\"\n-          sx={{\n-            py: 3,\n-            px: 2,\n-            mt: 'auto',\n-            backgroundColor: 'yellow',\n-          }}\n-        >\n-          <Typography variant=\"body1\">\n-            My sticky footer can be found here.\n-          </Typography>\n-          <Copyright />\n-        </Box>\n+        <Typography variant=\"body1\">\n+          My sticky footer can be found here.\n+        </Typography>\n+        <Copyright />\n       </Box>\n-    </footer>\n+    </Box>\n   );\n };\n \n export default Footer;\n"
+                },
+                {
+                    "date": 1644688036234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n     <Box\n       sx={{\n         display: 'flex',\n         flexDirection: 'column',\n+        minHeight: '100vh',\n       }}\n     >\n       <Box\n         component=\"footer\"\n"
+                },
+                {
+                    "date": 1644688081406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n     >\n       <Box\n         component=\"footer\"\n         sx={{\n-          py: 3,\n-          px: 2,\n-          mt: 'auto',\n+          //   py: 3,\n+          //   px: 2,\n+          //   mt: 'auto',\n           backgroundColor: 'yellow',\n         }}\n       >\n         <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644688088795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n     >\n       <Box\n         component=\"footer\"\n         sx={{\n-          //   py: 3,\n-          //   px: 2,\n-          //   mt: 'auto',\n+          py: 3,\n+          px: 2,\n+          mt: 'auto',\n           backgroundColor: 'yellow',\n         }}\n       >\n         <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644688100273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n         component=\"footer\"\n         sx={{\n           py: 3,\n           px: 2,\n-          mt: 'auto',\n+          //   mt: 'auto',\n           backgroundColor: 'yellow',\n         }}\n       >\n         <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644688144252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n     <Box\n       sx={{\n         display: 'flex',\n         flexDirection: 'column',\n-        minHeight: '100vh',\n       }}\n     >\n       <Box\n         component=\"footer\"\n"
+                },
+                {
+                    "date": 1644688156060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n         component=\"footer\"\n         sx={{\n           py: 3,\n           px: 2,\n-          //   mt: 'auto',\n+          mt: 'auto',\n           backgroundColor: 'yellow',\n         }}\n       >\n         <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644688192906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n         display: 'flex',\n         flexDirection: 'column',\n       }}\n     >\n+      <CssBaseline />\n       <Box\n         component=\"footer\"\n         sx={{\n           py: 3,\n"
+                },
+                {
+                    "date": 1644688241299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n     <Box\n       sx={{\n         display: 'flex',\n         flexDirection: 'column',\n+        minHeight: '100vh',\n       }}\n     >\n       <CssBaseline />\n       <Box\n"
+                },
+                {
+                    "date": 1644688286424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         component=\"footer\"\n         sx={{\n           py: 3,\n           px: 2,\n-          mt: 'auto',\n+          mt: 0,\n           backgroundColor: 'yellow',\n         }}\n       >\n         <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644688297052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     <Box\n       sx={{\n         display: 'flex',\n         flexDirection: 'column',\n-        minHeight: '100vh',\n+        // minHeight: '100vh',\n       }}\n     >\n       <CssBaseline />\n       <Box\n"
+                },
+                {
+                    "date": 1644688304539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     <Box\n       sx={{\n         display: 'flex',\n         flexDirection: 'column',\n-        // minHeight: '100vh',\n+        minHeight: '100vh',\n       }}\n     >\n       <CssBaseline />\n       <Box\n"
+                },
+                {
+                    "date": 1644688334721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         component=\"footer\"\n         sx={{\n           py: 3,\n           px: 2,\n-          mt: 0,\n+          mt: 'auto',\n           backgroundColor: 'yellow',\n         }}\n       >\n         <Typography variant=\"body1\">\n"
+                },
+                {
+                    "date": 1644688468311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,29 +20,20 @@\n \n const Footer = () => {\n   return (\n     <Box\n+      component=\"footer\"\n       sx={{\n-        display: 'flex',\n-        flexDirection: 'column',\n-        minHeight: '100vh',\n+        py: 3,\n+        px: 2,\n+        mt: 'auto',\n+        backgroundColor: 'yellow',\n       }}\n     >\n-      <CssBaseline />\n-      <Box\n-        component=\"footer\"\n-        sx={{\n-          py: 3,\n-          px: 2,\n-          mt: 'auto',\n-          backgroundColor: 'yellow',\n-        }}\n-      >\n-        <Typography variant=\"body1\">\n-          My sticky footer can be found here.\n-        </Typography>\n-        <Copyright />\n-      </Box>\n+      <Typography variant=\"body1\">\n+        My sticky footer can be found here.\n+      </Typography>\n+      <Copyright />\n     </Box>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1644688581858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       sx={{\n         py: 3,\n         px: 2,\n         mt: 'auto',\n-        backgroundColor: 'yellow',\n+        backgroundColor: '#E0E3E7',\n       }}\n     >\n       <Typography variant=\"body1\">\n         My sticky footer can be found here.\n"
+                },
+                {
+                    "date": 1644688632081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,12 +28,14 @@\n         mt: 'auto',\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n-      <Typography variant=\"body1\">\n-        My sticky footer can be found here.\n-      </Typography>\n-      <Copyright />\n+      <Container maxWidth=\"sm\">\n+        <Typography variant=\"body1\">\n+          My sticky footer can be found here.\n+        </Typography>\n+        <Copyright />\n+      </Container>\n     </Box>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1644688638467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,9 @@\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n       <Container maxWidth=\"sm\">\n-        <Typography variant=\"body1\">\n-          My sticky footer can be found here.\n-        </Typography>\n+        <Typography>My sticky footer can be found here.</Typography>\n         <Copyright />\n       </Container>\n     </Box>\n   );\n"
+                },
+                {
+                    "date": 1644688653398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,11 @@\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n       <Container maxWidth=\"sm\">\n-        <Typography>My sticky footer can be found here.</Typography>\n+        <Typography variant=\"body1\">\n+          My sticky footer can be found here.\n+        </Typography>\n         <Copyright />\n       </Container>\n     </Box>\n   );\n"
+                },
+                {
+                    "date": 1644688698790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   return (\n     <Typography variant=\"body2\" color=\"text.secondary\">\n       {'Copyright © '}\n       <Link color=\"inherit\" href=\"https://mui.com/\">\n-        Your Website\n+        Fly Your Kite\n       </Link>{' '}\n       {new Date().getFullYear()}\n       {'.'}\n     </Typography>\n"
+                },
+                {
+                    "date": 1644688707161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,10 @@\n     <Typography variant=\"body2\" color=\"text.secondary\">\n       {'Copyright © '}\n       <Link color=\"inherit\" href=\"https://mui.com/\">\n         Fly Your Kite\n-      </Link>{' '}\n+      </Link>\n       {new Date().getFullYear()}\n-      {'.'}\n     </Typography>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1644688727160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <Typography variant=\"body2\" color=\"text.secondary\">\n       {'Copyright © '}\n       <Link color=\"inherit\" href=\"https://mui.com/\">\n         Fly Your Kite\n-      </Link>\n+      </Link>{' '}\n       {new Date().getFullYear()}\n     </Typography>\n   );\n }\n"
+                },
+                {
+                    "date": 1644688843404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import Link from '@mui/material/Link';\n \n function Copyright() {\n   return (\n-    <Typography variant=\"body2\" color=\"text.secondary\">\n+    <Typography variant=\"body2\" color=\"text.secondary\" align=\"center\">\n       {'Copyright © '}\n       <Link color=\"inherit\" href=\"https://mui.com/\">\n         Fly Your Kite\n       </Link>{' '}\n"
+                },
+                {
+                    "date": 1644688866079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,8 @@\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n       <Container maxWidth=\"sm\">\n-        <Typography variant=\"body1\">\n-          My sticky footer can be found here.\n-        </Typography>\n         <Copyright />\n       </Container>\n     </Box>\n   );\n"
+                },
+                {
+                    "date": 1644688890268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import Typography from '@mui/material/Typography';\n import Container from '@mui/material/Container';\n import Link from '@mui/material/Link';\n \n-function Copyright() {\n+const Copyright = () => {\n   return (\n     <Typography variant=\"body2\" color=\"text.secondary\" align=\"center\">\n       {'Copyright © '}\n       <Link color=\"inherit\" href=\"https://mui.com/\">\n@@ -14,9 +14,9 @@\n       </Link>{' '}\n       {new Date().getFullYear()}\n     </Typography>\n   );\n-}\n+};\n \n const Footer = () => {\n   return (\n     <Box\n"
+                },
+                {
+                    "date": 1644688901509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n import * as React from 'react';\n-import CssBaseline from '@mui/material/CssBaseline';\n import Box from '@mui/material/Box';\n import Typography from '@mui/material/Typography';\n import Container from '@mui/material/Container';\n import Link from '@mui/material/Link';\n"
+                },
+                {
+                    "date": 1644690097797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,12 @@\n import Link from '@mui/material/Link';\n \n const Copyright = () => {\n   return (\n-    <Typography variant=\"body2\" color=\"text.secondary\" align=\"center\">\n+    <Typography variant=\"body2\" color=\"text.secondary\">\n+      © 2021 - Tokyo React Typescript Admin Dashboard\n       {'Copyright © '}\n-      <Link color=\"inherit\" href=\"https://mui.com/\">\n+      <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n       </Link>{' '}\n       {new Date().getFullYear()}\n     </Typography>\n"
+                },
+                {
+                    "date": 1644690113376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n \n const Copyright = () => {\n   return (\n     <Typography variant=\"body2\" color=\"text.secondary\">\n-      © 2021 - Tokyo React Typescript Admin Dashboard\n       {'Copyright © '}\n       <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n       </Link>{' '}\n"
+                },
+                {
+                    "date": 1644690135376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,12 @@\n const Copyright = () => {\n   return (\n     <Typography variant=\"body2\" color=\"text.secondary\">\n       {'Copyright © '}\n+      {new Date().getFullYear()}\n       <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n       </Link>{' '}\n-      {new Date().getFullYear()}\n     </Typography>\n   );\n };\n \n"
+                },
+                {
+                    "date": 1644690148252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const Copyright = () => {\n   return (\n     <Typography variant=\"body2\" color=\"text.secondary\">\n       {'Copyright © '}\n-      {new Date().getFullYear()}\n+      {new Date().getFullYear()}{' '}\n       <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n       </Link>{' '}\n     </Typography>\n"
+                },
+                {
+                    "date": 1644690159973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import Link from '@mui/material/Link';\n \n const Copyright = () => {\n   return (\n-    <Typography variant=\"body2\" color=\"text.secondary\">\n+    <Typography color=\"text.secondary\">\n       {'Copyright © '}\n       {new Date().getFullYear()}{' '}\n       <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n"
+                },
+                {
+                    "date": 1644690168848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import Link from '@mui/material/Link';\n \n const Copyright = () => {\n   return (\n-    <Typography color=\"text.secondary\">\n+    <Typography variant=\"body2\">\n       {'Copyright © '}\n       {new Date().getFullYear()}{' '}\n       <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n"
+                },
+                {
+                    "date": 1644690211148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import Link from '@mui/material/Link';\n \n const Copyright = () => {\n   return (\n-    <Typography variant=\"body2\">\n+    <Typography variant=\"body2\" color=\"text.secondary\">\n       {'Copyright © '}\n       {new Date().getFullYear()}{' '}\n       <Link color=\"inherit\" href=\"#\">\n         Fly Your Kite\n@@ -20,9 +20,8 @@\n   return (\n     <Box\n       component=\"footer\"\n       sx={{\n-        py: 3,\n         px: 2,\n         mt: 'auto',\n         backgroundColor: '#E0E3E7',\n       }}\n"
+                },
+                {
+                    "date": 1644690217001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   return (\n     <Box\n       component=\"footer\"\n       sx={{\n-        px: 2,\n+        py: 3,\n         mt: 'auto',\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n"
+                },
+                {
+                    "date": 1644690223609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n     <Box\n       component=\"footer\"\n       sx={{\n         py: 3,\n+        px: 2,\n         mt: 'auto',\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n"
+                },
+                {
+                    "date": 1644690260632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         mt: 'auto',\n         backgroundColor: '#E0E3E7',\n       }}\n     >\n-      <Container maxWidth=\"sm\">\n+      <Container maxWidth=\"lg\">\n         <Copyright />\n       </Container>\n     </Box>\n   );\n"
+                },
+                {
+                    "date": 1644690339616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       sx={{\n         py: 3,\n         px: 2,\n         mt: 'auto',\n-        backgroundColor: '#E0E3E7',\n+        backgroundColor: '#ffffff',\n       }}\n     >\n       <Container maxWidth=\"lg\">\n         <Copyright />\n"
+                }
+            ],
+            "date": 1644681752609,
+            "name": "Commit-0",
+            "content": "export default Footer = () => {};\n"
+        }
+    ]
+}

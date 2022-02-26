@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/pages/_app.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1644122641272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644122650155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n import \"../styles/globals.css\";\n \n-const App = ({ Component, pageProps }) => {\n-  return <Component {...pageProps} />;\n-};\n+const App = ({ Component, pageProps }) => <Component {...pageProps} />;\n \n export default MyApp;\n"
+                },
+                {
+                    "date": 1644122667533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n import \"../styles/globals.css\";\n \n-const App = ({ Component, pageProps }) => <Component {...pageProps} />;\n+const App = ({ Component, pageProps }) => {\n+  console.log(\"kaka\");\n+  return <Component {...pageProps} />;\n+};\n \n export default MyApp;\n"
+                },
+                {
+                    "date": 1644122712760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-import \"../styles/globals.css\";\n+import '../styles/globals.css';\n \n const App = ({ Component, pageProps }) => {\n-  console.log(\"kaka\");\n+  console.log('kaka');\n   return <Component {...pageProps} />;\n };\n \n-export default MyApp;\n+export default App;\n"
+                },
+                {
+                    "date": 1644123229771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import '../styles/globals.css';\n \n const App = ({ Component, pageProps }) => {\n-  console.log('kaka');\n-  return <Component {...pageProps} />;\n+  return <Head>\n+  <title>Fly Your Kite</title>\n+  <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n+</Head><Component {...pageProps} />;\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644123274431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import '../styles/globals.css';\n+import { GlobalProvider } from '../../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n-  return <Head>\n+  return <GlobalProvider sidebarOpen={false}></GlobalProvider><Head>\n   <title>Fly Your Kite</title>\n   <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n </Head><Component {...pageProps} />;\n };\n"
+                },
+                {
+                    "date": 1644123286553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n const App = ({ Component, pageProps }) => {\n   return <GlobalProvider sidebarOpen={false}></GlobalProvider><Head>\n   <title>Fly Your Kite</title>\n   <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n-</Head><Component {...pageProps} />;\n+</Head><Component {...pageProps} /></GlobalProvider>;\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644123297290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n import '../styles/globals.css';\n import { GlobalProvider } from '../../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n-  return <GlobalProvider sidebarOpen={false}></GlobalProvider><Head>\n-  <title>Fly Your Kite</title>\n-  <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n-</Head><Component {...pageProps} /></GlobalProvider>;\n+  return (\n+    <GlobalProvider sidebarOpen={false}>\n+      <Head>\n+        <title>Fly Your Kite</title>\n+        <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n+      </Head>\n+      <Component {...pageProps} />\n+    </GlobalProvider>\n+  );\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644123548492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import '../styles/globals.css';\n-import { GlobalProvider } from '../../context/global.context';\n+import { GlobalProvider } from '../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n   return (\n     <GlobalProvider sidebarOpen={false}>\n"
+                },
+                {
+                    "date": 1644123572147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import '../styles/globals.css';\n+import Head from 'next/head';\n import { GlobalProvider } from '../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n   return (\n"
+                },
+                {
+                    "date": 1644123834285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { GlobalProvider } from '../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n   return (\n-    <GlobalProvider sidebarOpen={false}>\n+    <GlobalProvider sidebarOpen={false} toggleDrawer={toggleDrawer} children>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n       </Head>\n"
+                },
+                {
+                    "date": 1644160366707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,17 @@\n import { GlobalProvider } from '../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n   return (\n-    <GlobalProvider sidebarOpen={false} toggleDrawer={toggleDrawer} children>\n+    // <GlobalProvider sidebarOpen={false} toggleDrawer={toggleDrawer} children>\n+    <>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n       </Head>\n       <Component {...pageProps} />\n-    </GlobalProvider>\n+    // </GlobalProvider>\n+    </>\n   );\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644160379706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n       </Head>\n       <Component {...pageProps} />\n+    </>\n     // </GlobalProvider>\n-    </>\n   );\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644160516845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,17 +3,15 @@\n import { GlobalProvider } from '../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n   return (\n-    // <GlobalProvider sidebarOpen={false} toggleDrawer={toggleDrawer} children>\n-    <>\n+    <GlobalProvider sidebarOpen={false} toggleDrawer={toggleDrawer} children>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n       </Head>\n       <Component {...pageProps} />\n-    </>\n-    // </GlobalProvider>\n+    </GlobalProvider>\n   );\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644160680532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,16 @@\n import '../styles/globals.css';\n import Head from 'next/head';\n-import { GlobalProvider } from '../context/global.context';\n \n const App = ({ Component, pageProps }) => {\n   return (\n-    <GlobalProvider sidebarOpen={false} toggleDrawer={toggleDrawer} children>\n+    <>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n       </Head>\n       <Component {...pageProps} />\n-    </GlobalProvider>\n+    </>\n   );\n };\n \n export default App;\n"
+                },
+                {
+                    "date": 1644691603751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,12 @@\n     <>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n+        <link\n+          rel=\"stylesheet\"\n+          href=\"https://fonts.googleapis.com/css?family=Tangerine\"\n+        ></link>\n       </Head>\n       <Component {...pageProps} />\n     </>\n   );\n"
+                },
+                {
+                    "date": 1644691751469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n         <link\n           rel=\"stylesheet\"\n-          href=\"https://fonts.googleapis.com/css?family=Tangerine\"\n+          href=\"https://fonts.googleapis.com/css?family=inter\"\n         ></link>\n       </Head>\n       <Component {...pageProps} />\n     </>\n"
+                },
+                {
+                    "date": 1644691888075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,8 @@\n     <>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n-        <link\n-          rel=\"stylesheet\"\n-          href=\"https://fonts.googleapis.com/css?family=inter\"\n-        ></link>\n       </Head>\n       <Component {...pageProps} />\n     </>\n   );\n"
+                },
+                {
+                    "date": 1645781157979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,12 @@\n     <>\n       <Head>\n         <title>Fly Your Kite</title>\n         <meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width\" />\n+        <link\n+          href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;family=Roboto:wght@400;500;700&amp;display=swap\"\n+          rel=\"stylesheet\"\n+        ></link>\n       </Head>\n       <Component {...pageProps} />\n     </>\n   );\n"
+                }
+            ],
+            "date": 1644122641272,
+            "name": "Commit-0",
+            "content": "import \"../styles/globals.css\";\n\nconst App = ({ Component, pageProps }) => {\n  return <Component {...pageProps} />;\n};\n\nexport default MyApp;\n"
+        }
+    ]
+}

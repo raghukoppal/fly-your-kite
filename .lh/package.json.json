@@ -1,0 +1,22 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1643438481697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644694870940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,15 @@\n     \"start\": \"next start\",\n     \"lint\": \"next lint\"\n   },\n   \"dependencies\": {\n+    \"@emotion/react\": \"^11.7.1\",\n+    \"@emotion/styled\": \"^11.6.0\",\n+    \"@mui/icons-material\": \"^5.3.1\",\n+    \"@mui/material\": \"^5.3.1\",\n+    \"@mui/x-data-grid-pro\": \"latest\",\n+    \"@mui/x-data-grid-generator\": \"latest\",\n+    \"@mui/x-data-grid\": \"latest\",\n     \"next\": \"12.0.9\",\n     \"react\": \"17.0.2\",\n     \"react-dom\": \"17.0.2\"\n   },\n"
+                }
+            ],
+            "date": 1643438481697,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"fly-your-kite\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev -p 3005\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\"\n  },\n  \"dependencies\": {\n    \"next\": \"12.0.9\",\n    \"react\": \"17.0.2\",\n    \"react-dom\": \"17.0.2\"\n  },\n  \"devDependencies\": {\n    \"eslint\": \"8.8.0\",\n    \"eslint-config-next\": \"12.0.9\"\n  }\n}\n"
+        }
+    ]
+}

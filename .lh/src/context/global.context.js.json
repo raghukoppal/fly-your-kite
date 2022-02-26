@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/context/global.context.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1643971494856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643971504541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,1 @@\n-export const GlobalProvider = ({\n-  children,\n-  checkoutFlow,\n-  paypalClientId,\n-}) => {};\n+export const GlobalProvider = () => {};\n"
+                },
+                {
+                    "date": 1643971554672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n+import { createContext, useContext, useState } from \"react\";\n export const GlobalProvider = () => {};\n"
+                },
+                {
+                    "date": 1643971584643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n import { createContext, useContext, useState } from \"react\";\n-export const GlobalProvider = () => {};\n+export const GlobalProvider = () => {\n+  const [sidebarOpen, setSidebarOpen] = useState(false);\n+};\n"
+                },
+                {
+                    "date": 1643971638306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,8 @@\n import { createContext, useContext, useState } from \"react\";\n export const GlobalProvider = () => {\n   const [sidebarOpen, setSidebarOpen] = useState(false);\n+  const [sidebarOpen, setSidebarOpen] = useState(false);\n+  const toggleDrawer = () => {\n+    setSidebarOpen(!sidebarOpen);\n+  };\n };\n"
+                },
+                {
+                    "date": 1643975401022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createContext, useContext, useState } from \"react\";\n-export const GlobalProvider = () => {\n+export const GlobalProvider = ({ sidebarOpen = false }) => {\n   const [sidebarOpen, setSidebarOpen] = useState(false);\n   const [sidebarOpen, setSidebarOpen] = useState(false);\n   const toggleDrawer = () => {\n     setSidebarOpen(!sidebarOpen);\n"
+                },
+                {
+                    "date": 1643975431386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { createContext, useContext, useState } from \"react\";\n export const GlobalProvider = ({ sidebarOpen = false }) => {\n-  const [sidebarOpen, setSidebarOpen] = useState(false);\n-  const [sidebarOpen, setSidebarOpen] = useState(false);\n+  const [sidebarOpen, setSidebarOpen] = useState(sidebarOpen);\n   const toggleDrawer = () => {\n     setSidebarOpen(!sidebarOpen);\n   };\n };\n"
+                },
+                {
+                    "date": 1643975621714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,13 @@\n import { createContext, useContext, useState } from \"react\";\n+const defaultState = [];\n+const GlobalContext = createContext(defaultState);\n export const GlobalProvider = ({ sidebarOpen = false }) => {\n   const [sidebarOpen, setSidebarOpen] = useState(sidebarOpen);\n   const toggleDrawer = () => {\n     setSidebarOpen(!sidebarOpen);\n   };\n+  const contextValues = {\n+    sidebarOpen,\n+    toggleDrawer,\n+  };\n };\n"
+                },
+                {
+                    "date": 1643975647356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,10 @@\n   const contextValues = {\n     sidebarOpen,\n     toggleDrawer,\n   };\n+  return (\n+    <GlobalContext.Provider value={contextValues}>\n+      {children}\n+    </GlobalContext.Provider>\n+  );\n };\n"
+                },
+                {
+                    "date": 1644122728540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { createContext, useContext, useState } from \"react\";\n+import { createContext, useContext, useState } from 'react';\n const defaultState = [];\n const GlobalContext = createContext(defaultState);\n export const GlobalProvider = ({ sidebarOpen = false }) => {\n   const [sidebarOpen, setSidebarOpen] = useState(sidebarOpen);\n"
+                },
+                {
+                    "date": 1644122884529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import { createContext, useContext, useState } from 'react';\n const defaultState = [];\n const GlobalContext = createContext(defaultState);\n export const GlobalProvider = ({ sidebarOpen = false }) => {\n-  const [sidebarOpen, setSidebarOpen] = useState(sidebarOpen);\n+  const [sideDrawOpen, setSideDrawOpen] = useState(sidebarOpen);\n   const toggleDrawer = () => {\n-    setSidebarOpen(!sidebarOpen);\n+    setSidebarOpen(!sideDrawOpen);\n   };\n   const contextValues = {\n-    sidebarOpen,\n+    sideDrawOpen,\n     toggleDrawer,\n   };\n   return (\n     <GlobalContext.Provider value={contextValues}>\n"
+                },
+                {
+                    "date": 1644123023303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import { createContext, useContext, useState } from 'react';\n const defaultState = [];\n const GlobalContext = createContext(defaultState);\n export const GlobalProvider = ({ sidebarOpen = false }) => {\n-  const [sideDrawOpen, setSideDrawOpen] = useState(sidebarOpen);\n+  const [sideDrawerOpen, setSideDrawerOpen] = useState(sidebarOpen);\n   const toggleDrawer = () => {\n-    setSidebarOpen(!sideDrawOpen);\n+    setSidebarOpen(!sideDrawerOpen);\n   };\n   const contextValues = {\n     sideDrawOpen,\n     toggleDrawer,\n"
+                },
+                {
+                    "date": 1644123647620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const toggleDrawer = () => {\n     setSidebarOpen(!sideDrawerOpen);\n   };\n   const contextValues = {\n-    sideDrawOpen,\n+    sideDrawerOpen,\n     toggleDrawer,\n   };\n   return (\n     <GlobalContext.Provider value={contextValues}>\n"
+                },
+                {
+                    "date": 1644123686978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { createContext, useContext, useState } from 'react';\n const defaultState = [];\n const GlobalContext = createContext(defaultState);\n-export const GlobalProvider = ({ sidebarOpen = false }) => {\n+export const GlobalProvider = ({ children, sidebarOpen = false }) => {\n   const [sideDrawerOpen, setSideDrawerOpen] = useState(sidebarOpen);\n   const toggleDrawer = () => {\n     setSidebarOpen(!sideDrawerOpen);\n   };\n"
+                },
+                {
+                    "date": 1644124107547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const GlobalContext = createContext(defaultState);\n export const GlobalProvider = ({ children, sidebarOpen = false }) => {\n   const [sideDrawerOpen, setSideDrawerOpen] = useState(sidebarOpen);\n   const toggleDrawer = () => {\n-    setSidebarOpen(!sideDrawerOpen);\n+    setSidebarOpen(!sideDrawerOpen || defaultState);\n   };\n   const contextValues = {\n     sideDrawerOpen,\n     toggleDrawer,\n"
+                }
+            ],
+            "date": 1643971494856,
+            "name": "Commit-0",
+            "content": "export const GlobalProvider = ({\n  children,\n  checkoutFlow,\n  paypalClientId,\n}) => {};\n"
+        }
+    ]
+}

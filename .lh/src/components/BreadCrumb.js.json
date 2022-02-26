@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/components/BreadCrumb.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1644164485475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644164491886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,22 +2,24 @@\n import Typography from '@mui/material/Typography';\n import Breadcrumbs from '@mui/material/Breadcrumbs';\n \n const BreadCrumb = () => {\n-  return div role=\"presentation\" onClick={handleClick}>\n-  <Breadcrumbs aria-label=\"breadcrumb\">\n-    <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n-      MUI\n-    </Link>\n-    <Link\n-      underline=\"hover\"\n-      color=\"inherit\"\n-      href=\"/getting-started/installation/\"\n-    >\n-      Core\n-    </Link>\n-    <Typography color=\"text.primary\">Breadcrumbs</Typography>\n-  </Breadcrumbs>\n-</div>;\n+  return (\n+    <div role=\"presentation\" onClick={handleClick}>\n+      <Breadcrumbs aria-label=\"breadcrumb\">\n+        <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n+          MUI\n+        </Link>\n+        <Link\n+          underline=\"hover\"\n+          color=\"inherit\"\n+          href=\"/getting-started/installation/\"\n+        >\n+          Core\n+        </Link>\n+        <Typography color=\"text.primary\">Breadcrumbs</Typography>\n+      </Breadcrumbs>\n+    </div>\n+  );\n };\n \n export default BreadCrumb;\n"
+                },
+                {
+                    "date": 1644164512646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n import * as React from 'react';\n import Typography from '@mui/material/Typography';\n import Breadcrumbs from '@mui/material/Breadcrumbs';\n \n+function handleClick(event) {\n+  event.preventDefault();\n+  console.info('You clicked a breadcrumb.');\n+}\n+\n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n       <Breadcrumbs aria-label=\"breadcrumb\">\n"
+                },
+                {
+                    "date": 1644164545475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import * as React from 'react';\n import Typography from '@mui/material/Typography';\n+import Link from '@mui/material/Link';\n import Breadcrumbs from '@mui/material/Breadcrumbs';\n \n function handleClick(event) {\n   event.preventDefault();\n"
+                },
+                {
+                    "date": 1644164622936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n       <Breadcrumbs aria-label=\"breadcrumb\">\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n-          MUI\n+          Home\n         </Link>\n         <Link\n           underline=\"hover\"\n           color=\"inherit\"\n"
+                },
+                {
+                    "date": 1644164636769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,16 +14,10 @@\n       <Breadcrumbs aria-label=\"breadcrumb\">\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n-        <Link\n-          underline=\"hover\"\n-          color=\"inherit\"\n-          href=\"/getting-started/installation/\"\n-        >\n-          Core\n-        </Link>\n-        <Typography color=\"text.primary\">Breadcrumbs</Typography>\n+\n+        <Typography color=\"text.primary\">Stocks</Typography>\n       </Breadcrumbs>\n     </div>\n   );\n };\n"
+                },
+                {
+                    "date": 1644253874253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,11 @@\n       <Breadcrumbs aria-label=\"breadcrumb\">\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n-\n+        <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n+          Home1\n+        </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n       </Breadcrumbs>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1644674346750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n import Breadcrumbs from '@mui/material/Breadcrumbs';\n \n function handleClick(event) {\n   event.preventDefault();\n-  console.info('You clicked a breadcrumb.');\n }\n \n const BreadCrumb = () => {\n   return (\n"
+                },
+                {
+                    "date": 1644674355148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,8 @@\n       <Breadcrumbs aria-label=\"breadcrumb\">\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n-        <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n-          Home1\n-        </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n       </Breadcrumbs>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1644676322639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs aria-label=\"breadcrumb\">\n+      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mt: 4 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n"
+                },
+                {
+                    "date": 1644676336261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mt: 4 }}>\n+      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mt: 20 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n"
+                },
+                {
+                    "date": 1644676352101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mt: 20 }}>\n+      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 20 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n"
+                },
+                {
+                    "date": 1644676360966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 20 }}>\n+      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 4 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n"
+                },
+                {
+                    "date": 1644676508225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 4 }}>\n+      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 2 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n"
+                },
+                {
+                    "date": 1644676635027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 2 }}>\n+      <Breadcrumbs icon=\"home\" aria-label=\"breadcrumb\" sx={{ mb: 2 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n"
+                },
+                {
+                    "date": 1644676702197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,11 @@\n \n const BreadCrumb = () => {\n   return (\n     <div role=\"presentation\" onClick={handleClick}>\n-      <Breadcrumbs icon=\"home\" aria-label=\"breadcrumb\" sx={{ mb: 2 }}>\n+      <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 2 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n+          <HomeIcon sx={{ mr: 0.5 }} fontSize=\"inherit\" />\n           Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n       </Breadcrumbs>\n"
+                },
+                {
+                    "date": 1644676726390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import * as React from 'react';\n import Typography from '@mui/material/Typography';\n import Link from '@mui/material/Link';\n+import HomeIcon from '@mui/icons-material/Home';\n import Breadcrumbs from '@mui/material/Breadcrumbs';\n \n function handleClick(event) {\n   event.preventDefault();\n"
+                },
+                {
+                    "date": 1644676739252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,8 @@\n     <div role=\"presentation\" onClick={handleClick}>\n       <Breadcrumbs aria-label=\"breadcrumb\" sx={{ mb: 2 }}>\n         <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n           <HomeIcon sx={{ mr: 0.5 }} fontSize=\"inherit\" />\n-          Home\n         </Link>\n         <Typography color=\"text.primary\">Stocks</Typography>\n       </Breadcrumbs>\n     </div>\n"
+                }
+            ],
+            "date": 1644164485475,
+            "name": "Commit-0",
+            "content": "import * as React from 'react';\nimport Typography from '@mui/material/Typography';\nimport Breadcrumbs from '@mui/material/Breadcrumbs';\n\nconst BreadCrumb = () => {\n  return div role=\"presentation\" onClick={handleClick}>\n  <Breadcrumbs aria-label=\"breadcrumb\">\n    <Link underline=\"hover\" color=\"inherit\" href=\"/\">\n      MUI\n    </Link>\n    <Link\n      underline=\"hover\"\n      color=\"inherit\"\n      href=\"/getting-started/installation/\"\n    >\n      Core\n    </Link>\n    <Typography color=\"text.primary\">Breadcrumbs</Typography>\n  </Breadcrumbs>\n</div>;\n};\n\nexport default BreadCrumb;\n"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/components/StocksGrid.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1645860180426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1645860187812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-export default function StocksSelector() {}\n+export default function StocksGrid() {}\n"
+                },
+                {
+                    "date": 1645860204220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n+import * as React from 'react';\n export default function StocksGrid() {}\n"
+                },
+                {
+                    "date": 1645860215399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,58 @@\n import * as React from 'react';\n-export default function StocksGrid() {}\n+export default function StocksGrid() {\n+  <div\n+    style={{\n+      'max-height': '400px',\n+      width: '100%',\n+      'margin-top': '32px',\n+      overflow: 'auto',\n+    }}\n+  >\n+    {/* <DataGrid rows={rows} columns={columns} /> */}\n+    <table>\n+      <thead>\n+        <tr>\n+          <th>Stock</th>\n+          <th>Mode</th>\n+          <th>En Time</th>\n+          <th>Ex Time</th>\n+          <th>LTP</th>\n+          <th>Transaction</th>\n+          <th>En Price</th>\n+          <th>Pts</th>\n+          <th>Qty</th>\n+          <th>P&L</th>\n+          <th>Action</th>\n+          <th>Signal</th>\n+        </tr>\n+      </thead>\n+      <tbody>\n+        {data.map((item) => (\n+          <tr key={item.id}>\n+            <td>{item.stock}</td>\n+            <td>\n+              <Switch checked={item.autoMode ? 'checked' : ''} />\n+            </td>\n+            <td>{item.entryTime}</td>\n+            <td>{item.exitTime}</td>\n+            <td>{item.ltp}</td>\n+            <td>{item.transaction}</td>\n+            <td>{item.entryPrice}</td>\n+            <td>{item.pts}</td>\n+            <td>{item.qty}</td>\n+            <td>{item.pl}</td>\n+            <td>\n+              <Button\n+                variant=\"contained\"\n+                color={`${item.action === 'buy' ? 'success' : 'error'}`}\n+              >\n+                {item.action}\n+              </Button>\n+            </td>\n+            <td>{item.signal}</td>\n+          </tr>\n+        ))}\n+      </tbody>\n+    </table>\n+  </div>;\n+}\n"
+                },
+                {
+                    "date": 1645860238468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,58 +1,60 @@\n import * as React from 'react';\n export default function StocksGrid() {\n-  <div\n-    style={{\n-      'max-height': '400px',\n-      width: '100%',\n-      'margin-top': '32px',\n-      overflow: 'auto',\n-    }}\n-  >\n-    {/* <DataGrid rows={rows} columns={columns} /> */}\n-    <table>\n-      <thead>\n-        <tr>\n-          <th>Stock</th>\n-          <th>Mode</th>\n-          <th>En Time</th>\n-          <th>Ex Time</th>\n-          <th>LTP</th>\n-          <th>Transaction</th>\n-          <th>En Price</th>\n-          <th>Pts</th>\n-          <th>Qty</th>\n-          <th>P&L</th>\n-          <th>Action</th>\n-          <th>Signal</th>\n-        </tr>\n-      </thead>\n-      <tbody>\n-        {data.map((item) => (\n-          <tr key={item.id}>\n-            <td>{item.stock}</td>\n-            <td>\n-              <Switch checked={item.autoMode ? 'checked' : ''} />\n-            </td>\n-            <td>{item.entryTime}</td>\n-            <td>{item.exitTime}</td>\n-            <td>{item.ltp}</td>\n-            <td>{item.transaction}</td>\n-            <td>{item.entryPrice}</td>\n-            <td>{item.pts}</td>\n-            <td>{item.qty}</td>\n-            <td>{item.pl}</td>\n-            <td>\n-              <Button\n-                variant=\"contained\"\n-                color={`${item.action === 'buy' ? 'success' : 'error'}`}\n-              >\n-                {item.action}\n-              </Button>\n-            </td>\n-            <td>{item.signal}</td>\n+  return (\n+    <div\n+      style={{\n+        'max-height': '400px',\n+        width: '100%',\n+        'margin-top': '32px',\n+        overflow: 'auto',\n+      }}\n+    >\n+      {/* <DataGrid rows={rows} columns={columns} /> */}\n+      <table>\n+        <thead>\n+          <tr>\n+            <th>Stock</th>\n+            <th>Mode</th>\n+            <th>En Time</th>\n+            <th>Ex Time</th>\n+            <th>LTP</th>\n+            <th>Transaction</th>\n+            <th>En Price</th>\n+            <th>Pts</th>\n+            <th>Qty</th>\n+            <th>P&L</th>\n+            <th>Action</th>\n+            <th>Signal</th>\n           </tr>\n-        ))}\n-      </tbody>\n-    </table>\n-  </div>;\n+        </thead>\n+        <tbody>\n+          {data.map((item) => (\n+            <tr key={item.id}>\n+              <td>{item.stock}</td>\n+              <td>\n+                <Switch checked={item.autoMode ? 'checked' : ''} />\n+              </td>\n+              <td>{item.entryTime}</td>\n+              <td>{item.exitTime}</td>\n+              <td>{item.ltp}</td>\n+              <td>{item.transaction}</td>\n+              <td>{item.entryPrice}</td>\n+              <td>{item.pts}</td>\n+              <td>{item.qty}</td>\n+              <td>{item.pl}</td>\n+              <td>\n+                <Button\n+                  variant=\"contained\"\n+                  color={`${item.action === 'buy' ? 'success' : 'error'}`}\n+                >\n+                  {item.action}\n+                </Button>\n+              </td>\n+              <td>{item.signal}</td>\n+            </tr>\n+          ))}\n+        </tbody>\n+      </table>\n+    </div>\n+  );\n }\n"
+                },
+                {
+                    "date": 1645872668938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import * as React from 'react';\n+import { data } from '../data';\n export default function StocksGrid() {\n   return (\n     <div\n       style={{\n"
+                },
+                {
+                    "date": 1645872743262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import * as React from 'react';\n import { data } from '../data';\n+\n+console.log('data', data);\n export default function StocksGrid() {\n   return (\n     <div\n       style={{\n"
+                },
+                {
+                    "date": 1645872798388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import * as React from 'react';\n import { data } from '../data';\n \n-console.log('data', data);\n export default function StocksGrid() {\n   return (\n     <div\n       style={{\n"
+                },
+                {
+                    "date": 1645872851138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import * as React from 'react';\n+import { Switch } from '@mui/material';\n import { data } from '../data';\n \n export default function StocksGrid() {\n   return (\n"
+                },
+                {
+                    "date": 1645872867934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import * as React from 'react';\n-import { Switch } from '@mui/material';\n+import { Switch, Button } from '@mui/material';\n import { data } from '../data';\n \n export default function StocksGrid() {\n   return (\n"
+                }
+            ],
+            "date": 1645860180426,
+            "name": "Commit-0",
+            "content": "export default function StocksSelector() {}\n"
+        }
+    ]
+}

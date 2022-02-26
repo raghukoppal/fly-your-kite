@@ -1,0 +1,254 @@
+{
+    "sourceFile": "src/components/Sidebar.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 59,
+            "patches": [
+                {
+                    "date": 1643633130960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1643633148110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import Drawer from \"@mui/material/Drawer\";\n \n-export default function Sidebar() {}\n+export default function Sidebar() {\n+  <Drawer>asdfaf</Drawer>;\n+}\n"
+                },
+                {
+                    "date": 1643633250979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import Drawer from \"@mui/material/Drawer\";\n \n export default function Sidebar() {\n-  <Drawer>asdfaf</Drawer>;\n+  return <Drawer>asdfaf</Drawer>;\n }\n"
+                },
+                {
+                    "date": 1643633295472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import Drawer from \"@mui/material/Drawer\";\n \n export default function Sidebar() {\n-  return <Drawer>asdfaf</Drawer>;\n+  return <Drawer open={true}>asdfaf</Drawer>;\n }\n"
+                },
+                {
+                    "date": 1643634276020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import Drawer from \"@mui/material/Drawer\";\n \n export default function Sidebar() {\n-  return <Drawer open={true}>asdfaf</Drawer>;\n+  return <Drawer open={true}>Home Profile Admin</Drawer>;\n }\n"
+                },
+                {
+                    "date": 1643634325074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n import Drawer from \"@mui/material/Drawer\";\n \n export default function Sidebar() {\n-  return <Drawer open={true}>Home Profile Admin</Drawer>;\n+  return (\n+    <Drawer open={true}>\n+      <List></List>\n+    </Drawer>\n+  );\n }\n"
+                },
+                {
+                    "date": 1643634345852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,17 @@\n \n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n-      <List></List>\n+      <List>\n+        {[\"All mail\", \"Trash\", \"Spam\"].map((text, index) => (\n+          <ListItem button key={text}>\n+            <ListItemIcon>\n+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}\n+            </ListItemIcon>\n+            <ListItemText primary={text} />\n+          </ListItem>\n+        ))}\n+      </List>\n     </Drawer>\n   );\n }\n"
+                },
+                {
+                    "date": 1643634379030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import Drawer from \"@mui/material/Drawer\";\n+import List from \"@mui/material/List\";\n \n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n"
+                },
+                {
+                    "date": 1643634393010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import Drawer from \"@mui/material/Drawer\";\n import List from \"@mui/material/List\";\n-\n+import ListItem from \"@mui/material/ListItem\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n"
+                },
+                {
+                    "date": 1643634421214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import Drawer from \"@mui/material/Drawer\";\n import List from \"@mui/material/List\";\n import ListItem from \"@mui/material/ListItem\";\n+import ListItemIcon from \"@mui/material/ListItemIcon\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n"
+                },
+                {
+                    "date": 1643634467283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import Drawer from \"@mui/material/Drawer\";\n import List from \"@mui/material/List\";\n import ListItem from \"@mui/material/ListItem\";\n import ListItemIcon from \"@mui/material/ListItemIcon\";\n+import ListItemText from \"@mui/material/ListItemText\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n"
+                },
+                {
+                    "date": 1643634497052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import List from \"@mui/material/List\";\n import ListItem from \"@mui/material/ListItem\";\n import ListItemIcon from \"@mui/material/ListItemIcon\";\n import ListItemText from \"@mui/material/ListItemText\";\n+import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n"
+                },
+                {
+                    "date": 1643634542400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import ListItem from \"@mui/material/ListItem\";\n import ListItemIcon from \"@mui/material/ListItemIcon\";\n import ListItemText from \"@mui/material/ListItemText\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n+import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n"
+                },
+                {
+                    "date": 1643634601455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,8 @@\n     <Drawer open={true}>\n       <List>\n         {[\"All mail\", \"Trash\", \"Spam\"].map((text, index) => (\n           <ListItem button key={text}>\n-            <ListItemIcon>\n-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}\n-            </ListItemIcon>\n             <ListItemText primary={text} />\n           </ListItem>\n         ))}\n       </List>\n"
+                },
+                {
+                    "date": 1643634631746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n-        {[\"All mail\", \"Trash\", \"Spam\"].map((text, index) => (\n+        {[\"Home\", \"Profile\", \"Spam\"].map((text, index) => (\n           <ListItem button key={text}>\n             <ListItemText primary={text} />\n           </ListItem>\n         ))}\n"
+                },
+                {
+                    "date": 1643634638870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <List>\n-        {[\"Home\", \"Profile\", \"Spam\"].map((text, index) => (\n+        {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n           <ListItem button key={text}>\n             <ListItemText primary={text} />\n           </ListItem>\n         ))}\n"
+                },
+                {
+                    "date": 1643634657575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar() {\n   return (\n-    <Drawer open={true}>\n+    <Drawer open={false}>\n       <List>\n         {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n           <ListItem button key={text}>\n             <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643692864455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar() {\n   return (\n-    <Drawer open={false}>\n+    <Drawer open={true}>\n       <List>\n         {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n           <ListItem button key={text}>\n             <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643693156494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,16 @@\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n-      <List>\n-        {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n-          <ListItem button key={text}>\n-            <ListItemText primary={text} />\n-          </ListItem>\n-        ))}\n-      </List>\n+      <Box>\n+        <List>\n+          {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n+            <ListItem button key={text}>\n+              <ListItemText primary={text} />\n+            </ListItem>\n+          ))}\n+        </List>\n+      </Box>\n     </Drawer>\n   );\n }\n"
+                },
+                {
+                    "date": 1643693172913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,12 @@\n import List from \"@mui/material/List\";\n import ListItem from \"@mui/material/ListItem\";\n import ListItemIcon from \"@mui/material/ListItemIcon\";\n import ListItemText from \"@mui/material/ListItemText\";\n+import Box from \"@mui/material/Box\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n+\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <Box>\n"
+                },
+                {
+                    "date": 1643693202003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n-      <Box>\n+      <Box sx={{ flexGrow: 1 }}>\n         <List>\n           {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643693239897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n-      <Box sx={{ flexGrow: 1 }}>\n+      <Box sx={{ flexGrow: 1, width: 252 }}>\n         <List>\n           {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643693384677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n-      <Box sx={{ flexGrow: 1, width: 252 }}>\n+      <Box sx={{ flexGrow: 1, width: 252 }} role=\"presentation\">\n         <List>\n           {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643695538122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,14 @@\n \n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n-      <Box sx={{ flexGrow: 1, width: 252 }} role=\"presentation\">\n+      <Box\n+        sx={{ flexGrow: 1, width: 252 }}\n+        role=\"presentation\"\n+        variant=\"persistent\"\n+        anchor=\"left\"\n+      >\n         <List>\n           {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643698386126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,18 @@\n         role=\"presentation\"\n         variant=\"persistent\"\n         anchor=\"left\"\n       >\n+        <DrawerHeader>\n+          <IconButton onClick={handleDrawerClose}>\n+            {theme.direction === \"ltr\" ? (\n+              <ChevronLeftIcon />\n+            ) : (\n+              <ChevronRightIcon />\n+            )}\n+          </IconButton>\n+        </DrawerHeader>\n+        <Divider />\n         <List>\n           {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n"
+                },
+                {
+                    "date": 1643698406284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,14 +16,10 @@\n         variant=\"persistent\"\n         anchor=\"left\"\n       >\n         <DrawerHeader>\n-          <IconButton onClick={handleDrawerClose}>\n-            {theme.direction === \"ltr\" ? (\n-              <ChevronLeftIcon />\n-            ) : (\n-              <ChevronRightIcon />\n-            )}\n+          <IconButton>\n+            <ChevronRightIcon />\n           </IconButton>\n         </DrawerHeader>\n         <Divider />\n         <List>\n"
+                },
+                {
+                    "date": 1643698472493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import ListItemText from \"@mui/material/ListItemText\";\n import Box from \"@mui/material/Box\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n-\n+import Divider from \"@mui/material/Divider\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <Box\n"
+                },
+                {
+                    "date": 1643698597564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,8 @@\n         role=\"presentation\"\n         variant=\"persistent\"\n         anchor=\"left\"\n       >\n-        <DrawerHeader>\n-          <IconButton>\n-            <ChevronRightIcon />\n-          </IconButton>\n-        </DrawerHeader>\n         <Divider />\n         <List>\n           {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n             <ListItem button key={text}>\n"
+                },
+                {
+                    "date": 1643698785616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import Drawer from \"@mui/material/Drawer\";\n+import { Drawer } from \"@mui/material\";\n import List from \"@mui/material/List\";\n import ListItem from \"@mui/material/ListItem\";\n import ListItemIcon from \"@mui/material/ListItemIcon\";\n import ListItemText from \"@mui/material/ListItemText\";\n"
+                },
+                {
+                    "date": 1643698793687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-import { Drawer } from \"@mui/material\";\n-import List from \"@mui/material/List\";\n+import { Drawer, List } from \"@mui/material\";\n import ListItem from \"@mui/material/ListItem\";\n import ListItemIcon from \"@mui/material/ListItemIcon\";\n import ListItemText from \"@mui/material/ListItemText\";\n import Box from \"@mui/material/Box\";\n"
+                },
+                {
+                    "date": 1643698814809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n-import { Drawer, List } from \"@mui/material\";\n-import ListItem from \"@mui/material/ListItem\";\n-import ListItemIcon from \"@mui/material/ListItemIcon\";\n+import { Drawer, List, ListItem, ListItemIcon } from \"@mui/material\";\n import ListItemText from \"@mui/material/ListItemText\";\n import Box from \"@mui/material/Box\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n"
+                },
+                {
+                    "date": 1643698822701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n-import { Drawer, List, ListItem, ListItemIcon } from \"@mui/material\";\n-import ListItemText from \"@mui/material/ListItemText\";\n+import {\n+  Drawer,\n+  List,\n+  ListItem,\n+  ListItemIcon,\n+  ListItemText,\n+} from \"@mui/material\";\n import Box from \"@mui/material/Box\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n import Divider from \"@mui/material/Divider\";\n"
+                },
+                {
+                    "date": 1643698852809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,13 @@\n   List,\n   ListItem,\n   ListItemIcon,\n   ListItemText,\n+  Box,Divider\n } from \"@mui/material\";\n-import Box from \"@mui/material/Box\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n-import Divider from \"@mui/material/Divider\";\n+import  from \"@mui/material/Divider\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <Box\n"
+                },
+                {
+                    "date": 1643698892610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,13 @@\n   List,\n   ListItem,\n   ListItemIcon,\n   ListItemText,\n-  Box,Divider\n+  Box,\n+  Divider,\n } from \"@mui/material\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n-import  from \"@mui/material/Divider\";\n export default function Sidebar() {\n   return (\n     <Drawer open={true}>\n       <Box\n"
+                },
+                {
+                    "date": 1643700876216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar() {\n   return (\n-    <Drawer open={true}>\n+    <Drawer open={false}>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n"
+                },
+                {
+                    "date": 1643968483059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar() {\n   return (\n-    <Drawer open={false}>\n+    <Drawer open={true}>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n"
+                },
+                {
+                    "date": 1643968680639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n   Divider,\n } from \"@mui/material\";\n import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n import MailIcon from \"@mui/icons-material/Mail\";\n-export default function Sidebar() {\n+export default function Sidebar({ open }) {\n   return (\n-    <Drawer open={true}>\n+    <Drawer open={open}>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n"
+                },
+                {
+                    "date": 1643969275647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,13 @@\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar({ open }) {\n   return (\n     <Drawer open={open}>\n+      <DrawerHeader>\n+        <IconButton>\n+          <ChevronLeftIcon />\n+        </IconButton>\n+      </DrawerHeader>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n"
+                },
+                {
+                    "date": 1643969355990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,11 @@\n import MailIcon from \"@mui/icons-material/Mail\";\n export default function Sidebar({ open }) {\n   return (\n     <Drawer open={open}>\n-      <DrawerHeader>\n-        <IconButton>\n-          <ChevronLeftIcon />\n-        </IconButton>\n-      </DrawerHeader>\n+      <IconButton>\n+        <ChevronLeftIcon />\n+      </IconButton>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n"
+                },
+                {
+                    "date": 1643969414197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n   ListItemText,\n   Box,\n   Divider,\n } from \"@mui/material\";\n-import InboxIcon from \"@mui/icons-material/MoveToInbox\";\n-import MailIcon from \"@mui/icons-material/Mail\";\n+import ChevronLeftIcon from \"@mui/icons-material/ChevronLeft\";\n+\n export default function Sidebar({ open }) {\n   return (\n     <Drawer open={open}>\n       <IconButton>\n"
+                },
+                {
+                    "date": 1643969438710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   ListItemIcon,\n   ListItemText,\n   Box,\n   Divider,\n+  IconButton,\n } from \"@mui/material\";\n import ChevronLeftIcon from \"@mui/icons-material/ChevronLeft\";\n \n export default function Sidebar({ open }) {\n"
+                },
+                {
+                    "date": 1643969510791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   IconButton,\n } from \"@mui/material\";\n import ChevronLeftIcon from \"@mui/icons-material/ChevronLeft\";\n \n-export default function Sidebar({ open }) {\n+export default function Sidebar({ open, sideBarOpen }) {\n   return (\n     <Drawer open={open}>\n       <IconButton>\n         <ChevronLeftIcon />\n"
+                },
+                {
+                    "date": 1643969519418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n export default function Sidebar({ open, sideBarOpen }) {\n   return (\n     <Drawer open={open}>\n-      <IconButton>\n+      <IconButton onClick={sideBarOpen}>\n         <ChevronLeftIcon />\n       </IconButton>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n"
+                },
+                {
+                    "date": 1643969782415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n   IconButton,\n } from \"@mui/material\";\n import ChevronLeftIcon from \"@mui/icons-material/ChevronLeft\";\n \n-export default function Sidebar({ open, sideBarOpen }) {\n+export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open}>\n-      <IconButton onClick={sideBarOpen}>\n+      <IconButton onClick={toggleDrawer}>\n         <ChevronLeftIcon />\n       </IconButton>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n"
+                },
+                {
+                    "date": 1643969840189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n import ChevronLeftIcon from \"@mui/icons-material/ChevronLeft\";\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n-    <Drawer open={open}>\n+    <Drawer open={open} onClose={toggleDrawer}>\n       <IconButton onClick={toggleDrawer}>\n         <ChevronLeftIcon />\n       </IconButton>\n       <Box\n"
+                },
+                {
+                    "date": 1644161640694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,16 +6,25 @@\n   ListItemText,\n   Box,\n   Divider,\n   IconButton,\n-} from \"@mui/material\";\n-import ChevronLeftIcon from \"@mui/icons-material/ChevronLeft\";\n+} from '@mui/material';\n+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open} onClose={toggleDrawer}>\n-      <IconButton onClick={toggleDrawer}>\n-        <ChevronLeftIcon />\n+      <IconButton\n+        edge=\"start\"\n+        color=\"inherit\"\n+        aria-label=\"open drawer\"\n+        onClick={toggleDrawer}\n+        sx={{\n+          marginRight: '36px',\n+          ...(open && { display: 'none' }),\n+        }}\n+      >\n+        <MenuIcon />\n       </IconButton>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n@@ -23,9 +32,9 @@\n         anchor=\"left\"\n       >\n         <Divider />\n         <List>\n-          {[\"Home\", \"Profile\", \"Admin\"].map((text, index) => (\n+          {['Home', 'Profile', 'Admin'].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n             </ListItem>\n           ))}\n"
+                },
+                {
+                    "date": 1644161650497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   ListItemText,\n   Box,\n   Divider,\n   IconButton,\n+  MenuIcon,\n } from '@mui/material';\n import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';\n \n export default function Sidebar({ open, toggleDrawer }) {\n"
+                },
+                {
+                    "date": 1644161707771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n   ListItemText,\n   Box,\n   Divider,\n   IconButton,\n-  MenuIcon,\n } from '@mui/material';\n import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';\n+import MenuIcon from '@mui/icons-material/Menu';\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open} onClose={toggleDrawer}>\n"
+                },
+                {
+                    "date": 1644161819155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,26 +13,26 @@\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open} onClose={toggleDrawer}>\n-      <IconButton\n-        edge=\"start\"\n-        color=\"inherit\"\n-        aria-label=\"open drawer\"\n-        onClick={toggleDrawer}\n-        sx={{\n-          marginRight: '36px',\n-          ...(open && { display: 'none' }),\n-        }}\n-      >\n-        <MenuIcon />\n-      </IconButton>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n         anchor=\"left\"\n       >\n+        <IconButton\n+          edge=\"start\"\n+          color=\"inherit\"\n+          aria-label=\"open drawer\"\n+          onClick={toggleDrawer}\n+          sx={{\n+            marginRight: '36px',\n+            ...(open && { display: 'none' }),\n+          }}\n+        >\n+          <MenuIcon />\n+        </IconButton>\n         <Divider />\n         <List>\n           {['Home', 'Profile', 'Admin'].map((text, index) => (\n             <ListItem button key={text}>\n"
+                },
+                {
+                    "date": 1644161830423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,20 +19,8 @@\n         role=\"presentation\"\n         variant=\"persistent\"\n         anchor=\"left\"\n       >\n-        <IconButton\n-          edge=\"start\"\n-          color=\"inherit\"\n-          aria-label=\"open drawer\"\n-          onClick={toggleDrawer}\n-          sx={{\n-            marginRight: '36px',\n-            ...(open && { display: 'none' }),\n-          }}\n-        >\n-          <MenuIcon />\n-        </IconButton>\n         <Divider />\n         <List>\n           {['Home', 'Profile', 'Admin'].map((text, index) => (\n             <ListItem button key={text}>\n"
+                },
+                {
+                    "date": 1644161845945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,22 +13,15 @@\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open} onClose={toggleDrawer}>\n-      <Box\n-        sx={{ flexGrow: 1, width: 252 }}\n-        role=\"presentation\"\n-        variant=\"persistent\"\n-        anchor=\"left\"\n-      >\n-        <Divider />\n-        <List>\n-          {['Home', 'Profile', 'Admin'].map((text, index) => (\n-            <ListItem button key={text}>\n-              <ListItemText primary={text} />\n-            </ListItem>\n-          ))}\n-        </List>\n-      </Box>\n+      <Divider />\n+      <List>\n+        {['Home', 'Profile', 'Admin'].map((text, index) => (\n+          <ListItem button key={text}>\n+            <ListItemText primary={text} />\n+          </ListItem>\n+        ))}\n+      </List>\n     </Drawer>\n   );\n }\n"
+                },
+                {
+                    "date": 1644161851926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,15 +13,22 @@\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open} onClose={toggleDrawer}>\n-      <Divider />\n-      <List>\n-        {['Home', 'Profile', 'Admin'].map((text, index) => (\n-          <ListItem button key={text}>\n-            <ListItemText primary={text} />\n-          </ListItem>\n-        ))}\n-      </List>\n+      <Box\n+        sx={{ flexGrow: 1, width: 252 }}\n+        role=\"presentation\"\n+        variant=\"persistent\"\n+        anchor=\"left\"\n+      >\n+        <Divider />\n+        <List>\n+          {['Home', 'Profile', 'Admin'].map((text, index) => (\n+            <ListItem button key={text}>\n+              <ListItemText primary={text} />\n+            </ListItem>\n+          ))}\n+        </List>\n+      </Box>\n     </Drawer>\n   );\n }\n"
+                },
+                {
+                    "date": 1644161918575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,20 @@\n \n export default function Sidebar({ open, toggleDrawer }) {\n   return (\n     <Drawer open={open} onClose={toggleDrawer}>\n+      <Toolbar\n+        sx={{\n+          display: 'flex',\n+          alignItems: 'center',\n+          justifyContent: 'flex-end',\n+          px: [1],\n+        }}\n+      >\n+        <IconButton onClick={toggleDrawer}>\n+          <ChevronLeftIcon />\n+        </IconButton>\n+      </Toolbar>\n       <Box\n         sx={{ flexGrow: 1, width: 252 }}\n         role=\"presentation\"\n         variant=\"persistent\"\n"
+                },
+                {
+                    "date": 1644161951161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   ListItemText,\n   Box,\n   Divider,\n   IconButton,\n+  Toolbar,\n } from '@mui/material';\n import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';\n import MenuIcon from '@mui/icons-material/Menu';\n \n"
+                },
+                {
+                    "date": 1644162008031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n           justifyContent: 'flex-end',\n           px: [1],\n         }}\n       >\n+        Fly Your Kite\n         <IconButton onClick={toggleDrawer}>\n           <ChevronLeftIcon />\n         </IconButton>\n       </Toolbar>\n"
+                },
+                {
+                    "date": 1644162024201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n           justifyContent: 'flex-end',\n           px: [1],\n         }}\n       >\n-        Fly Your Kite\n         <IconButton onClick={toggleDrawer}>\n           <ChevronLeftIcon />\n         </IconButton>\n       </Toolbar>\n"
+                },
+                {
+                    "date": 1644253727288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         anchor=\"left\"\n       >\n         <Divider />\n         <List>\n-          {['Home', 'Profile', 'Admin'].map((text, index) => (\n+          {['Home', 'Profile', 'Admin1'].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n             </ListItem>\n           ))}\n"
+                },
+                {
+                    "date": 1645869563082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         anchor=\"left\"\n       >\n         <Divider />\n         <List>\n-          {['Home', 'Profile', 'Admin1'].map((text, index) => (\n+          {['Home', 'Stocks', 'Admin1'].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n             </ListItem>\n           ))}\n"
+                },
+                {
+                    "date": 1645869708466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         anchor=\"left\"\n       >\n         <Divider />\n         <List>\n-          {['Home', 'Stocks', 'Admin1'].map((text, index) => (\n+          {['Home', 'Stocks', 'Admin'].map((text, index) => (\n             <ListItem button key={text}>\n               <ListItemText primary={text} />\n             </ListItem>\n           ))}\n"
+                },
+                {
+                    "date": 1645869736413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import {\n   Drawer,\n   List,\n   ListItem,\n-  ListItemIcon,\n   ListItemText,\n   Box,\n   Divider,\n   IconButton,\n"
+                }
+            ],
+            "date": 1643633130960,
+            "name": "Commit-0",
+            "content": "import Drawer from \"@mui/material/Drawer\";\n\nexport default function Sidebar() {}\n"
+        }
+    ]
+}

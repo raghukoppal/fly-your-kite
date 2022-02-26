@@ -1,0 +1,138 @@
+{
+    "sourceFile": "src/data.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 30,
+            "patches": [
+                {
+                    "date": 1644255133219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1644515242088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-[\n+export data = [\n   {\n     stock: 'infy',\n     qty: '100',\n     price: '200',\n"
+                },
+                {
+                    "date": 1644515247789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-export data = [\n+export const data = [\n   {\n     stock: 'infy',\n     qty: '100',\n     price: '200',\n"
+                },
+                {
+                    "date": 1644515438908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,17 @@\n export const data = [\n   {\n-    stock: 'infy',\n-    qty: '100',\n-    price: '200',\n+    id: 1,\n+    stock: 'TECHM',\n+    mode: 'auto',\n+    entryTime: '09:45',\n+    exitTime: '2:14',\n+    ltp: '1455.50',\n+    transaction: 'buy',\n+    entryPrice: 1455.5,\n+    pts: 5,\n+    qty: 1000,\n+    pl: 5000,\n+    action: 'buy',\n+    signal: 'in progress',\n   },\n-  {\n-    stock: 'TCS',\n-    qty: '200',\n-    price: '120',\n-  },\n ];\n"
+                },
+                {
+                    "date": 1644516131603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,20 @@\n     pl: 5000,\n     action: 'buy',\n     signal: 'in progress',\n   },\n+  {\n+    id: 1,\n+    stock: 'INFY',\n+    mode: 'auto',\n+    entryTime: '10:45',\n+    exitTime: '01:10',\n+    ltp: '1855.50',\n+    transaction: 'sell',\n+    entryPrice: 1135.5,\n+    pts: 10,\n+    qty: 500,\n+    pl: 5000,\n+    action: 'sell',\n+    signal: 'exit',\n+  },\n ];\n"
+                },
+                {
+                    "date": 1644516195805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     action: 'buy',\n     signal: 'in progress',\n   },\n   {\n-    id: 1,\n+    id: 2,\n     stock: 'INFY',\n     mode: 'auto',\n     entryTime: '10:45',\n     exitTime: '01:10',\n@@ -28,5 +28,20 @@\n     pl: 5000,\n     action: 'sell',\n     signal: 'exit',\n   },\n+  {\n+    id: 3,\n+    stock: 'HDFC',\n+    mode: 'auto',\n+    entryTime: '10:45',\n+    exitTime: '01:10',\n+    ltp: '1855.50',\n+    transaction: 'sell',\n+    entryPrice: 1135.5,\n+    pts: 10,\n+    qty: 500,\n+    pl: 5000,\n+    action: 'sell',\n+    signal: 'exit',\n+  },\n ];\n"
+                },
+                {
+                    "date": 1644516245351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,16 +32,16 @@\n   {\n     id: 3,\n     stock: 'HDFC',\n     mode: 'auto',\n-    entryTime: '10:45',\n-    exitTime: '01:10',\n-    ltp: '1855.50',\n-    transaction: 'sell',\n-    entryPrice: 1135.5,\n-    pts: 10,\n-    qty: 500,\n-    pl: 5000,\n+    entryTime: '12:45',\n+    exitTime: '02:10',\n+    ltp: '1990.50',\n+    transaction: 'buy',\n+    entryPrice: 2135.5,\n+    pts: 20,\n+    qty: 5000,\n+    pl: 10000,\n     action: 'sell',\n     signal: 'exit',\n   },\n ];\n"
+                },
+                {
+                    "date": 1644516752219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,5 +43,20 @@\n     pl: 10000,\n     action: 'sell',\n     signal: 'exit',\n   },\n+  {\n+    id: 3,\n+    stock: 'HDFC',\n+    mode: 'auto',\n+    entryTime: '12:45',\n+    exitTime: '02:10',\n+    ltp: '1990.50',\n+    transaction: 'buy',\n+    entryPrice: 2135.5,\n+    pts: 20,\n+    qty: 5000,\n+    pl: 10000,\n+    action: 'sell',\n+    signal: 'exit',\n+  },\n ];\n"
+                },
+                {
+                    "date": 1644516758045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     action: 'sell',\n     signal: 'exit',\n   },\n   {\n-    id: 3,\n+    id: 4,\n     stock: 'HDFC',\n     mode: 'auto',\n     entryTime: '12:45',\n     exitTime: '02:10',\n"
+                },
+                {
+                    "date": 1644516783674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     signal: 'exit',\n   },\n   {\n     id: 4,\n-    stock: 'HDFC',\n+    stock: 'TVS',\n     mode: 'auto',\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n"
+                },
+                {
+                    "date": 1644516947254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,5 +58,20 @@\n     pl: 10000,\n     action: 'sell',\n     signal: 'exit',\n   },\n+  {\n+    id: 4,\n+    stock: 'TVS',\n+    mode: 'auto',\n+    entryTime: '12:45',\n+    exitTime: '02:10',\n+    ltp: '1990.50',\n+    transaction: 'buy',\n+    entryPrice: 2135.5,\n+    pts: 20,\n+    qty: 5000,\n+    pl: 10000,\n+    action: 'sell',\n+    signal: 'exit',\n+  },\n ];\n"
+                },
+                {
+                    "date": 1644516961786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n     action: 'sell',\n     signal: 'exit',\n   },\n   {\n-    id: 4,\n-    stock: 'TVS',\n+    id: 5,\n+    stock: 'Wipro',\n     mode: 'auto',\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n"
+                },
+                {
+                    "date": 1644516981188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,5 +73,20 @@\n     pl: 10000,\n     action: 'sell',\n     signal: 'exit',\n   },\n+  {\n+    id: 5,\n+    stock: 'HCL',\n+    mode: 'auto',\n+    entryTime: '12:45',\n+    exitTime: '02:10',\n+    ltp: '1990.50',\n+    transaction: 'buy',\n+    entryPrice: 2135.5,\n+    pts: 20,\n+    qty: 5000,\n+    pl: 10000,\n+    action: 'sell',\n+    signal: 'exit',\n+  },\n ];\n"
+                },
+                {
+                    "date": 1644736790110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     transaction: 'buy',\n     entryPrice: 1455.5,\n     pts: 5,\n     qty: 1000,\n-    pl: 5000,\n+    pl: 500000.0,\n     action: 'buy',\n     signal: 'in progress',\n   },\n   {\n"
+                },
+                {
+                    "date": 1644737375626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n export const data = [\n   {\n     id: 1,\n     stock: 'TECHM',\n-    mode: 'auto',\n+    autoMode: true,\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n     transaction: 'buy',\n@@ -16,9 +16,9 @@\n   },\n   {\n     id: 2,\n     stock: 'INFY',\n-    mode: 'auto',\n+    autoMode: true,\n     entryTime: '10:45',\n     exitTime: '01:10',\n     ltp: '1855.50',\n     transaction: 'sell',\n@@ -31,9 +31,9 @@\n   },\n   {\n     id: 3,\n     stock: 'HDFC',\n-    mode: 'auto',\n+    autoMode: true,\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n     transaction: 'buy',\n@@ -46,9 +46,9 @@\n   },\n   {\n     id: 4,\n     stock: 'TVS',\n-    mode: 'auto',\n+    autoMode: true,\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n     transaction: 'buy',\n@@ -61,9 +61,9 @@\n   },\n   {\n     id: 5,\n     stock: 'Wipro',\n-    mode: 'auto',\n+    autoMode: true,\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n     transaction: 'buy',\n@@ -76,9 +76,9 @@\n   },\n   {\n     id: 5,\n     stock: 'HCL',\n-    mode: 'auto',\n+    autoMode: true,\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n     transaction: 'buy',\n"
+                },
+                {
+                    "date": 1644737387576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n   },\n   {\n     id: 2,\n     stock: 'INFY',\n-    autoMode: true,\n+    autoMode: false,\n     entryTime: '10:45',\n     exitTime: '01:10',\n     ltp: '1855.50',\n     transaction: 'sell',\n"
+                },
+                {
+                    "date": 1644747657042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n export const data = [\n   {\n     id: 1,\n-    stock: 'TECHM',\n+    stock: 'TECHM1',\n     autoMode: true,\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n"
+                },
+                {
+                    "date": 1644748090130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n export const data = [\n   {\n     id: 1,\n-    stock: 'TECHM1',\n+    stock: 'TECHM',\n     autoMode: true,\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n"
+                },
+                {
+                    "date": 1644768872542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n export const data = [\n   {\n     id: 1,\n-    stock: 'TECHM',\n+    stock: 'TECHM1',\n     autoMode: true,\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n"
+                },
+                {
+                    "date": 1644768998817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n export const data = [\n   {\n     id: 1,\n-    stock: 'TECHM1',\n+    stock: 'TECHM',\n     autoMode: true,\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n"
+                },
+                {
+                    "date": 1645779089628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     qty: 1000,\n     pl: 500000.0,\n     action: 'buy',\n     signal: 'in progress',\n+    action: 'buy',\n   },\n   {\n     id: 2,\n     stock: 'INFY',\n"
+                },
+                {
+                    "date": 1645779108452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n     qty: 1000,\n     pl: 500000.0,\n     action: 'buy',\n     signal: 'in progress',\n-    action: 'buy',\n   },\n   {\n     id: 2,\n     stock: 'INFY',\n@@ -56,9 +55,9 @@\n     entryPrice: 2135.5,\n     pts: 20,\n     qty: 5000,\n     pl: 10000,\n-    action: 'sell',\n+    action: 'buy',\n     signal: 'exit',\n   },\n   {\n     id: 5,\n"
+                },
+                {
+                    "date": 1645779117592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,8 +85,8 @@\n     entryPrice: 2135.5,\n     pts: 20,\n     qty: 5000,\n     pl: 10000,\n-    action: 'sell',\n+    action: 'buy',\n     signal: 'exit',\n   },\n ];\n"
+                },
+                {
+                    "date": 1645785688136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n     transaction: 'buy',\n-    entryPrice: 1455.5,\n+    entryPrice: 1555.5,\n     pts: 5,\n     qty: 1000,\n     pl: 500000.0,\n     action: 'buy',\n"
+                },
+                {
+                    "date": 1645785699888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     entryTime: '09:45',\n     exitTime: '2:14',\n     ltp: '1455.50',\n     transaction: 'buy',\n-    entryPrice: 1555.5,\n+    entryPrice: 1655.5,\n     pts: 5,\n     qty: 1000,\n     pl: 500000.0,\n     action: 'buy',\n"
+                },
+                {
+                    "date": 1645788151007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     pts: 20,\n     qty: 5000,\n     pl: 10000,\n     action: 'sell',\n-    signal: 'exit',\n+    signal: 'error',\n   },\n   {\n     id: 4,\n     stock: 'TVS',\n"
+                },
+                {
+                    "date": 1645788159208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     pts: 20,\n     qty: 5000,\n     pl: 10000,\n     action: 'buy',\n-    signal: 'exit',\n+    signal: 'trailing',\n   },\n   {\n     id: 5,\n     stock: 'Wipro',\n"
+                },
+                {
+                    "date": 1645788180696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n     pts: 20,\n     qty: 5000,\n     pl: 10000,\n     action: 'sell',\n-    signal: 'exit',\n+    signal: 'entry',\n   },\n   {\n     id: 5,\n     stock: 'HCL',\n"
+                },
+                {
+                    "date": 1645788202598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,7 +86,7 @@\n     pts: 20,\n     qty: 5000,\n     pl: 10000,\n     action: 'buy',\n-    signal: 'exit',\n+    signal: 'started',\n   },\n ];\n"
+                },
+                {
+                    "date": 1645791607739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,5 +88,35 @@\n     pl: 10000,\n     action: 'buy',\n     signal: 'started',\n   },\n+  {\n+    id: 6,\n+    stock: 'Dixon',\n+    autoMode: true,\n+    entryTime: '12:45',\n+    exitTime: '02:10',\n+    ltp: '1990.50',\n+    transaction: 'buy',\n+    entryPrice: 2135.5,\n+    pts: 20,\n+    qty: 5000,\n+    pl: 10000,\n+    action: 'buy',\n+    signal: 'started',\n+  },\n+  {\n+    id: 5,\n+    stock: 'HCL',\n+    autoMode: true,\n+    entryTime: '12:45',\n+    exitTime: '02:10',\n+    ltp: '1990.50',\n+    transaction: 'buy',\n+    entryPrice: 2135.5,\n+    pts: 20,\n+    qty: 5000,\n+    pl: 10000,\n+    action: 'buy',\n+    signal: 'started',\n+  },\n ];\n"
+                },
+                {
+                    "date": 1645791617090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,10 +104,10 @@\n     action: 'buy',\n     signal: 'started',\n   },\n   {\n-    id: 5,\n-    stock: 'HCL',\n+    id: 7,\n+    stock: 'REL',\n     autoMode: true,\n     entryTime: '12:45',\n     exitTime: '02:10',\n     ltp: '1990.50',\n"
+                }
+            ],
+            "date": 1644255133219,
+            "name": "Commit-0",
+            "content": "[\n  {\n    stock: 'infy',\n    qty: '100',\n    price: '200',\n  },\n  {\n    stock: 'TCS',\n    qty: '200',\n    price: '120',\n  },\n];\n"
+        }
+    ]
+}
