@@ -1,5 +1,5 @@
 import { withLayout } from '../components/layout';
-import { Grid, Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import StocksSelector from '../components/StocksSelector';
 import StartStopBtns from '../components/StartStopBtns';

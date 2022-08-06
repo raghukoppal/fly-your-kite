@@ -16,44 +16,35 @@ export default function StocksGrid() {
       <table>
         <thead>
           <tr>
-            <th>Stock</th>
-            <th>Mode</th>
-            <th>En Time</th>
-            <th>Ex Time</th>
+            <th>Name</th>
             <th>LTP</th>
             <th>Transaction</th>
-            <th>En Price</th>
-            <th>Pts</th>
-            <th>Qty</th>
-            <th>{'P&L'}</th>
-            <th>Action</th>
+            <th>Avg Price</th>
+            <th>Net Qty</th>
             <th>Signal</th>
+            <th>Position Status</th>
+            <th>{'P&L'}</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
               <td>{item.stock}</td>
-              <td>
-                <Switch checked={item.autoMode ? 'checked' : ''} />
-              </td>
-              <td>{item.entryTime}</td>
-              <td>{item.exitTime}</td>
               <td>{item.ltp}</td>
               <td>{item.transaction}</td>
-              <td>{item.entryPrice}</td>
-              <td>{item.pts}</td>
+              <td>Avg Price</td>
               <td>{item.qty}</td>
-              <td>{item.pl}</td>
               <td>
-                <Button
+                {/* <Button
                   variant="contained"
                   color={`${item.action === 'buy' ? 'success' : 'error'}`}
                 >
                   {item.action}
-                </Button>
+                </Button> */}
+                {item.action}
               </td>
               <td>{item.signal}</td>
+              <td>{item.pl}</td>
             </tr>
           ))}
         </tbody>

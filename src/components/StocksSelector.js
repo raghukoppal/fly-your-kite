@@ -22,9 +22,9 @@ export default function StocksSelector() {
         label="Stocks"
         onChange={handleChange}
       >
-        <MenuItem value="">
+        {/* <MenuItem value="">
           <em>None</em>
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem value={'techm'}>TECHM</MenuItem>
         <MenuItem value={'infy'}>INFY</MenuItem>
         <MenuItem value={'hdfc'}>HDFC</MenuItem>

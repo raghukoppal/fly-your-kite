@@ -1,25 +1,21 @@
 import { withLayout } from '../components/layout';
-import {
-  Paper,
-  Divider,
-  Typography,
-  Switch,
-  Button,
-  Select,
-  InputLabel,
-  FormControl,
-  MenuItem,
-  Stack,
-  Grid,
-  Box,
-} from '@mui/material';
-import StocksSelector from '../components/StocksSelector';
-import StartStopBtns from '../components/StartStopBtns';
-
-import { data } from '../data';
+import useFetch from '../utils/useFetch';
 
 const Home = () => {
-  return <>Login</>;
+  const [data, isLoading] = useFetch(
+    'https://jsonplaceholder.typicode.com/todos'
+  );
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+  return (
+    <>
+      {data &&
+        data.map(({ id, title }) => {
+          return <p key={id}>{title}</p>;
+        })}
+    </>
+  );
 };
 
 export default withLayout(Home);
