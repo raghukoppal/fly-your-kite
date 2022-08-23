@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
-import { useStream } from "react-fetch-streams";
-import { Switch, Button } from "@mui/material";
+import React, { useCallback, useState } from 'react';
+import { useStream } from 'react-fetch-streams';
+import { Switch, Button } from '@mui/material';
 //import { data } from "../data";
 
 export default function StocksGrid() {
@@ -21,18 +21,32 @@ export default function StocksGrid() {
     [setData]
   );
   //useStream("http://localhost:8080/data/generator/v1", { onNext });
-  useStream("http://localhost:8080/trading/stock/positions1", { onNext });
-
+  useStream('http://localhost:8080/trading/stock/positions1', { onNext });
   return (
     data && (
       <div
         style={{
-          "max-height": "400px",
-          width: "100%",
-          "margin-top": "32px",
-          overflow: "auto",
+          'max-height': '400px',
+          width: '100%',
+          'margin-top': '32px',
+          overflow: 'auto',
         }}
       >
+        <div
+          style={{
+            width: '100%',
+            'margin-bottom': '20px',
+            'text-align': 'right',
+          }}
+        >
+          Trading:
+          <span
+            style={{
+              'font-weight': 'bold',
+              color: `${data.isTradingStopped ? 'green' : 'red'}`,
+            }}
+          >{`${data.isTradingStopped ? 'Started' : 'Stopped'}`}</span>
+        </div>
         <table>
           <thead>
             <tr>
@@ -44,7 +58,7 @@ export default function StocksGrid() {
               <th>En Time</th>
               <th>Signal</th>
               <th>Status</th>
-              <th>{"P&L"}</th>
+              <th>{'P&L'}</th>
               <th>Realised</th>
               <th>Un-Realised</th>
             </tr>
