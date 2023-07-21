@@ -54,6 +54,7 @@ tbody th {
   position: -webkit-sticky; /* for Safari */
   position: sticky;
   left: 0;
+  color: #678098;
 }
 
 tbody td:first-child {
@@ -93,4 +94,62 @@ tbody th {
 thead th,
 tbody th {
   background-color: #f8f8f8;
+}
+
+.portfolio {
+  margin: 1rem 0;
+}
+.portfolio .thead {
+  color: #678098;
+}
+
+.tab-header {
+  margin: 1rem;
+  display: inline-block;
+}
+
+.casual {
+  color: #455d7a;
+}
+.error {
+  color: #c43235;
+}
+.warn {
+  color: #e65100;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.status-success {
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.15);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.status-info {
+  color: #4184f3;
+  background: rgba(65, 132, 243, 0.15);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.status-warn {
+  color: #e65100;
+  background: rgba(230, 81, 0, 0.15);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.status-error {
+  color: #c43235;
+  background: rgba(196, 50, 53, 0.15);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
 }

@@ -7,26 +7,30 @@ import {
   IconButton,
   Tooltip,
   Avatar,
-} from '@mui/material';
-import Badge from '@mui/material/Badge';
-import MenuIcon from '@mui/icons-material/Menu';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+} from "@mui/material";
+import Badge from "@mui/material/Badge";
+import MenuIcon from "@mui/icons-material/Menu";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 const Header = ({ toggleDrawer }) => {
   return (
-    <AppBar position="static">
+    <AppBar position="sticky" elevation={1} sx={{ bgcolor: "#fff" }}>
       <Toolbar>
         <IconButton
           size="large"
           edge="start"
           color="inherit"
           aria-label="menu"
-          sx={{ mr: 2 }}
+          sx={{ mr: 2, color: "#0d0c22" }}
           onClick={toggleDrawer}
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, color: "#0d0c22" }}
+        >
           Fly Your Kite
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
@@ -38,7 +42,7 @@ const Header = ({ toggleDrawer }) => {
           <IconButton
             size="large"
             aria-label="show 10 new notifications"
-            color="inherit"
+            sx={{ color: "#A9A9A9" }}
           >
             <Badge badgeContent={10} color="error">
               <NotificationsIcon />
