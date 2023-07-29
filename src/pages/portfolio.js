@@ -343,6 +343,76 @@ const HoldingsTable = () => {
     </TableContainer>
   );
 };
+const PositionsTable = () => {
+  return (
+    <TableContainer>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead className="thead">
+          <TableRow
+            sx={{
+              "&:last-child td, &:last-child th": { border: 0 },
+            }}
+          >
+            <TableCell>Instrument</TableCell>
+            <TableCell>Qty</TableCell>
+            <TableCell>LTP</TableCell>
+            <TableCell>Entry price</TableCell>
+            <TableCell>Exit price</TableCell>
+            <TableCell>Avg price</TableCell>
+            <TableCell>Age</TableCell>
+            <TableCell>Transaction type</TableCell>
+            <TableCell>Staus</TableCell>
+            <TableCell>Action</TableCell>
+            <TableCell>P&L</TableCell>
+          </TableRow>
+        </TableHead>
+
+        <TableBody>
+          {holdingRows.map((row, index) => (
+            <TableRow
+              key={`${row.name}_${index}`}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell>{row.name}</TableCell>
+              <TableCell>{row.qty}</TableCell>
+              <TableCell>{row.ltp}</TableCell>
+              <TableCell>{row.entryPrice}</TableCell>
+              <TableCell>{row.exitPrice}</TableCell>
+              <TableCell>{row.avgPrice}</TableCell>
+              <TableCell>{row.age}</TableCell>
+              <TableCell>
+                <span
+                  className={
+                    row.transact === "Buy"
+                      ? "status-info"
+                      : row.transact === "Sell"
+                      ? "status-warn"
+                      : ""
+                  }
+                >
+                  {row.transact}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className={row.status === "closed" ? "status-warn" : ""}>
+                  {row.status}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className={row.action === "Exit" ? "status-error" : ""}>
+                  {row.action}
+                </span>
+              </TableCell>
+              <TableCell className={row.pandl < 0 ? "warn" : "success"}>
+                {row.pandl}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+};
 
 const OpportunitiesTable = () => {
   return (
@@ -355,15 +425,8 @@ const OpportunitiesTable = () => {
             }}
           >
             <TableCell>Instrument</TableCell>
-            <TableCell>Entry date time</TableCell>
-            <TableCell>Exit date time</TableCell>
+            <TableCell>Date & time</TableCell>
             <TableCell>LTP</TableCell>
-            <TableCell>Entry Price</TableCell>
-            <TableCell>Exit Price</TableCell>
-            <TableCell>Transaction</TableCell>
-            <TableCell>Qty</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>P&L</TableCell>
           </TableRow>
         </TableHead>
 
@@ -375,40 +438,7 @@ const OpportunitiesTable = () => {
             >
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.entryDateTime}</TableCell>
-              <TableCell>{row.exitDateTime}</TableCell>
               <TableCell>{row.ltp}</TableCell>
-              <TableCell>{row.entryPrice}</TableCell>
-              <TableCell>{row.exitPrice}</TableCell>
-              <TableCell>
-                <span
-                  className={
-                    row.transact === "Buy"
-                      ? "status-info"
-                      : row.transact === "sell"
-                      ? "status-warn"
-                      : ""
-                  }
-                >
-                  {row.transact}
-                </span>
-              </TableCell>
-              <TableCell>{row.qty}</TableCell>
-              <TableCell>
-                <span
-                  className={
-                    row.status === "complete"
-                      ? "status-success"
-                      : row.status === "closed"
-                      ? "status-warn"
-                      : ""
-                  }
-                >
-                  {row.status}
-                </span>
-              </TableCell>
-              <TableCell className={row.pandl < 0 ? "error" : "success"}>
-                {row.pandl}
-              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -418,12 +448,22 @@ const OpportunitiesTable = () => {
 };
 
 const PortfolioTabPanel = ({ tabVal }) => {
-  return tabVal ? <OpportunitiesTable /> : <HoldingsTable />;
+  switch (tabVal) {
+    case 0:
+      return <HoldingsTable />;
+    case 1:
+      return <PositionsTable />;
+    case 2:
+      return <OpportunitiesTable />;
+    default:
+      return <HoldingsTable />;
+  }
 };
 
-const PortfolioTabs = ({ tabVal, tabValSet }) => {
+const PortfolioTabs = ({ tabVal, tabValSet, tabNameSet }) => {
   const handleTabChange = (e, newTabVal) => {
     tabValSet(newTabVal);
+    tabNameSet(e.target.innerHTML);
   };
 
   return (
@@ -449,7 +489,8 @@ const PortfolioTabs = ({ tabVal, tabValSet }) => {
         onChange={handleTabChange}
       >
         <Tab value={0} label={"Holdings"} disableRipple={true} />
-        <Tab value={1} label={"Opportunities"} disableRipple={true} />
+        <Tab value={1} label={"Positions"} disableRipple={true} />
+        <Tab value={2} label={"Opportunities"} disableRipple={true} />
       </Tabs>
     </Box>
   );
@@ -457,15 +498,20 @@ const PortfolioTabs = ({ tabVal, tabValSet }) => {
 
 const Portfolio = () => {
   const [tabVal, setTabVal] = useState(0);
+  const [tabName, setTabName] = useState("");
   return (
     <div className="portfolio">
       <Paper sx={{ padding: "1rem" }} elevation={1}>
         <Grid container>
           <Grid item xs={8}>
-            <span>{tabVal ? "Opportunities" : "Holdings (11)"} </span>
+            <span>{tabName} </span>
           </Grid>
           <Grid item xs={4}>
-            <PortfolioTabs tabVal={tabVal} tabValSet={setTabVal} />
+            <PortfolioTabs
+              tabVal={tabVal}
+              tabValSet={setTabVal}
+              tabNameSet={setTabName}
+            />
           </Grid>
           <Grid item xs={12}>
             <PortfolioTabPanel tabVal={tabVal} />
