@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { useStream } from "react-fetch-streams";
 import { withLayout } from "../components/layout";
 
 import Grid from "@mui/material/Grid";
@@ -496,9 +497,26 @@ const PortfolioTabs = ({ tabVal, tabValSet, tabNameSet }) => {
   );
 };
 
+const fetchParams = { mode: "cors" };
+
 const Portfolio = () => {
   const [tabVal, setTabVal] = useState(0);
   const [tabName, setTabName] = useState("");
+  const [data, setData] = useState({});
+  const onNext = useCallback(
+    async (res) => {
+      const data = await res.json();
+      console.log("data", data);
+      setData(data);
+    },
+    [setData]
+  );
+  useStream(
+    "https://9d00-2401-4900-1f28-6bca-a282-386d-7c17-dce6.ngrok.io/v1/shorttermtrading/live/positions",
+    { onNext }
+  );
+
+  console.log("data", data);
   return (
     <div className="portfolio">
       <Paper sx={{ padding: "1rem" }} elevation={1}>
