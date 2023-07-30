@@ -505,38 +505,48 @@ const Portfolio = () => {
   const [data, setData] = useState({});
   const onNext = useCallback(
     async (res) => {
-      const data = await res.json();
-      console.log("data", data);
-      setData(data);
+      try {
+        const response = await res;
+        const restext = await res.text();
+
+        console.log("response text", JSON.parse(restext.replace("data:", "")));
+        // Now you can access the individual properties of the jsonData object
+        // setData(jsonData);
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+        // Handle the error, for example, set a default value for data or show an error message.
+        setData({});
+      }
     },
     [setData]
   );
+
   useStream(
-    "https://9d00-2401-4900-1f28-6bca-a282-386d-7c17-dce6.ngrok.io/v1/shorttermtrading/live/positions",
+    "https://a910-2401-4900-1cc4-fc45-98b6-dfd2-28f6-60e9.ngrok.io/v1/shorttermtrading/live/positions",
     { onNext }
   );
 
-  console.log("data", data);
   return (
-    <div className="portfolio">
-      <Paper sx={{ padding: "1rem" }} elevation={1}>
-        <Grid container>
-          <Grid item xs={8}>
-            <span>{tabName} </span>
-          </Grid>
-          <Grid item xs={4}>
-            <PortfolioTabs
-              tabVal={tabVal}
-              tabValSet={setTabVal}
-              tabNameSet={setTabName}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <PortfolioTabPanel tabVal={tabVal} />
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
+    // <div className="portfolio">
+    //   <Paper sx={{ padding: "1rem" }} elevation={1}>
+    //     <Grid container>
+    //       <Grid item xs={8}>
+    //         <span>{tabName} </span>
+    //       </Grid>
+    //       <Grid item xs={4}>
+    //         <PortfolioTabs
+    //           tabVal={tabVal}
+    //           tabValSet={setTabVal}
+    //           tabNameSet={setTabName}
+    //         />
+    //       </Grid>
+    //       <Grid item xs={12}>
+    //         <PortfolioTabPanel tabVal={tabVal} />
+    //       </Grid>
+    //     </Grid>
+    //   </Paper>
+    // </div>
+    <div>test</div>
   );
 };
 
