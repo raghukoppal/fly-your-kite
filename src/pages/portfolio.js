@@ -14,263 +14,9 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-function createHoldingData(
-  name,
-  entryDateTime,
-  exitDateTime,
-  qty,
-  ltp,
-  entryPrice,
-  exitPrice,
-  avgPrice,
-  age,
-  transact,
-  status,
-  action,
-  pandl
-) {
-  return {
-    name,
-    entryDateTime,
-    exitDateTime,
-    qty,
-    ltp,
-    entryPrice,
-    exitPrice,
-    avgPrice,
-    age,
-    transact,
-    status,
-    action,
-    pandl,
-  };
-}
+import { sampleData } from "../mockdata/sampledata";
 
-function createOppData(
-  name,
-  entryDateTime,
-  exitDateTime,
-  ltp,
-  entryPrice,
-  exitPrice,
-  transact,
-  qty,
-  status,
-  pandl
-) {
-  return {
-    name,
-    entryDateTime,
-    exitDateTime,
-    ltp,
-    entryPrice,
-    exitPrice,
-    transact,
-    qty,
-    status,
-    pandl,
-  };
-}
-
-const holdingRows = [
-  createHoldingData(
-    "GULFOILLUB",
-    "11/01/2023 09:15:00",
-    "09/04/2023 01:20:00",
-    1000,
-    159.2,
-    160.11,
-    180.01,
-    162.1,
-    80,
-    "Buy",
-    "closed",
-    "Exit",
-    1256
-  ),
-  createHoldingData(
-    "NLCINDIA",
-    "06/02/2023 09:15:00",
-    "29/06/2023 02:20:10",
-    500,
-    119.2,
-    120.11,
-    132.01,
-    120.2,
-    60,
-    "Sell",
-    "closed",
-    "Exit",
-    -1560
-  ),
-  createHoldingData(
-    "TATACOFFEE",
-    "06/11/2022 02:28:50",
-    "19/04/2023 01:12:45",
-    10,
-    22119.2,
-    22120.11,
-    22132.01,
-    22120.2,
-    20,
-    "Buy",
-    "closed",
-    "Exit",
-    15960
-  ),
-  createHoldingData(
-    "ICICIBANK",
-    "06/11/2022 10:28:50",
-    "29/05/2023 03:10:20",
-    600,
-    387.24,
-    388.14,
-    389.11,
-    340.6,
-    200,
-    "Buy",
-    "closed",
-    "Exit",
-    -15600
-  ),
-];
-
-const opportunityRows = [
-  createOppData(
-    "INFY",
-    "11/01/2023 09:15:00",
-    "09/04/2023 01:20:00",
-    159.2,
-    159.5,
-    189.06,
-    "sell",
-    1000,
-    "complete",
-    3200
-  ),
-  createOppData(
-    "ASIANPAINT",
-    "22/08/2022 10:15:00",
-    "11/10/2022 03:01:10",
-    1509.12,
-    1509.14,
-    1560.1,
-    "Buy",
-    100,
-    "closed",
-    1560
-  ),
-  createOppData(
-    "BANKBEES",
-    "22/02/2023 10:18:01",
-    "11/04/2023 02:12:10",
-    209.12,
-    210.14,
-    260.1,
-    "Buy",
-    1500,
-    "closed",
-    12600
-  ),
-  createOppData(
-    "DIXON",
-    "16/12/2022 11:18:01",
-    "18/04/2023 01:12:10",
-    1309.01,
-    1310.14,
-    1349.1,
-    "Buy",
-    1500,
-    "closed",
-    14600
-  ),
-  createOppData(
-    "IRCTC",
-    "04/02/2023 11:18:01",
-    "18/04/2023 01:12:10",
-    460.2,
-    462.14,
-    490.1,
-    "Buy",
-    1500,
-    "closed",
-    20600
-  ),
-  createOppData(
-    "NIFTY ALPHA 50",
-    "04/01/2023 11:28:01",
-    "11/04/2023 01:12:10",
-    1260.2,
-    1262.14,
-    1490.1,
-    "Buy",
-    500,
-    "closed",
-    20200
-  ),
-  createOppData(
-    "HINDUNILVR",
-    "08/03/2023 11:28:01",
-    "11/04/2023 01:12:10",
-    1320.02,
-    1321.14,
-    1520.1,
-    "Buy",
-    200,
-    "closed",
-    20200
-  ),
-  createOppData(
-    "GMMPFAUDLR",
-    "09/12/2022 11:28:01",
-    "11/04/2023 01:12:10",
-    320.02,
-    321.14,
-    520.1,
-    "Buy",
-    2000,
-    "closed",
-    45200
-  ),
-  createOppData(
-    "BATAINDIA",
-    "09/03/2023 10:28:01",
-    "07/04/2023 03:12:10",
-    320.02,
-    321.14,
-    520.1,
-    "Buy",
-    1000,
-    "closed",
-    5200
-  ),
-  createOppData(
-    "IPCALAB",
-    "31/04/2023 10:28:01",
-    "27/05/2023 03:01:10",
-    430.02,
-    422.14,
-    490.1,
-    "Buy",
-    1000,
-    "closed",
-    15200
-  ),
-  createOppData(
-    "HBLPOWER",
-    "12/05/2023 10:28:01",
-    "10/07/2023 03:12:10",
-    2320.02,
-    2321.14,
-    520.1,
-    "Buy",
-    500,
-    "closed",
-    5200
-  ),
-];
-
-const HoldingsTable = () => {
+const HoldingsTable = ({ data }) => {
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -280,7 +26,7 @@ const HoldingsTable = () => {
               "&:last-child td, &:last-child th": { border: 0 },
             }}
           >
-            <TableCell>Instrument</TableCell>
+            <TableCell>Name</TableCell>
             <TableCell>Entry date time</TableCell>
             <TableCell>Exit date time</TableCell>
             <TableCell>Qty</TableCell>
@@ -297,46 +43,24 @@ const HoldingsTable = () => {
         </TableHead>
 
         <TableBody>
-          {holdingRows.map((row, index) => (
+          {Object.keys(data).map((key, keyIndex) => (
             <TableRow
-              key={`${row.name}_${index}`}
+              key={`${data[key].name_keyIndex}`}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.entryDateTime}</TableCell>
-              <TableCell>{row.exitDateTime}</TableCell>
-              <TableCell>{row.qty}</TableCell>
-              <TableCell>{row.ltp}</TableCell>
-              <TableCell>{row.entryPrice}</TableCell>
-              <TableCell>{row.exitPrice}</TableCell>
-              <TableCell>{row.avgPrice}</TableCell>
-              <TableCell>{row.age}</TableCell>
-              <TableCell>
-                <span
-                  className={
-                    row.transact === "Buy"
-                      ? "status-info"
-                      : row.transact === "Sell"
-                      ? "status-warn"
-                      : ""
-                  }
-                >
-                  {row.transact}
-                </span>
-              </TableCell>
-              <TableCell>
-                <span className={row.status === "closed" ? "status-warn" : ""}>
-                  {row.status}
-                </span>
-              </TableCell>
-              <TableCell>
-                <span className={row.action === "Exit" ? "status-error" : ""}>
-                  {row.action}
-                </span>
-              </TableCell>
-              <TableCell className={row.pandl < 0 ? "warn" : "success"}>
-                {row.pandl}
-              </TableCell>
+              <TableCell>{data[key].name}</TableCell>
+              <TableCell>{data[key].entryTime}</TableCell>
+              <TableCell>{data[key].exitTime}</TableCell>
+              <TableCell>{data[key].netQty}</TableCell>
+              <TableCell>{data[key].ltp}</TableCell>
+              <TableCell>{data[key].avgPrice}</TableCell>
+              <TableCell>{data[key].avgPrice}</TableCell>
+              <TableCell>{data[key].avgPrice}</TableCell>
+              <TableCell>{data[key].token}</TableCell>
+              <TableCell>{data[key].status}</TableCell>
+              <TableCell>{data[key].status}</TableCell>
+              <TableCell>{data[key].posInfo}</TableCell>
+              <TableCell>{data[key].pnl}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -344,7 +68,7 @@ const HoldingsTable = () => {
     </TableContainer>
   );
 };
-const PositionsTable = () => {
+const PositionsTable = ({ data }) => {
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -354,7 +78,7 @@ const PositionsTable = () => {
               "&:last-child td, &:last-child th": { border: 0 },
             }}
           >
-            <TableCell>Instrument</TableCell>
+            <TableCell>Name</TableCell>
             <TableCell>Qty</TableCell>
             <TableCell>LTP</TableCell>
             <TableCell>Entry price</TableCell>
@@ -367,46 +91,23 @@ const PositionsTable = () => {
             <TableCell>P&L</TableCell>
           </TableRow>
         </TableHead>
-
         <TableBody>
-          {holdingRows.map((row, index) => (
+          {Object.keys(data).map((key, keyIndex) => (
             <TableRow
-              key={`${row.name}_${index}`}
+              key={`${data[key].name_keyIndex}`}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.qty}</TableCell>
-              <TableCell>{row.ltp}</TableCell>
-              <TableCell>{row.entryPrice}</TableCell>
-              <TableCell>{row.exitPrice}</TableCell>
-              <TableCell>{row.avgPrice}</TableCell>
-              <TableCell>{row.age}</TableCell>
-              <TableCell>
-                <span
-                  className={
-                    row.transact === "Buy"
-                      ? "status-info"
-                      : row.transact === "Sell"
-                      ? "status-warn"
-                      : ""
-                  }
-                >
-                  {row.transact}
-                </span>
-              </TableCell>
-              <TableCell>
-                <span className={row.status === "closed" ? "status-warn" : ""}>
-                  {row.status}
-                </span>
-              </TableCell>
-              <TableCell>
-                <span className={row.action === "Exit" ? "status-error" : ""}>
-                  {row.action}
-                </span>
-              </TableCell>
-              <TableCell className={row.pandl < 0 ? "warn" : "success"}>
-                {row.pandl}
-              </TableCell>
+              <TableCell>{data[key].name}</TableCell>
+              <TableCell>{data[key].qty}</TableCell>
+              <TableCell>{data[key].ltp}</TableCell>
+              <TableCell>{data[key].entryPrice}</TableCell>
+              <TableCell>{data[key].entryPrice}</TableCell>
+              <TableCell>{data[key].avgPrice}</TableCell>
+              <TableCell>{data[key].pts}</TableCell>
+              <TableCell>{data[key].transaction}</TableCell>
+              <TableCell>{data[key].transaction}</TableCell>
+              <TableCell>{data[key].action}</TableCell>
+              <TableCell>{data[key].pnl}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -415,7 +116,7 @@ const PositionsTable = () => {
   );
 };
 
-const OpportunitiesTable = () => {
+const OpportunitiesTable = ({ data }) => {
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -432,14 +133,14 @@ const OpportunitiesTable = () => {
         </TableHead>
 
         <TableBody>
-          {opportunityRows.map((row, index) => (
+          {Object.keys(data).map((key, keyIndex) => (
             <TableRow
-              key={`${row.name}_${index}`}
+              key={`${data[key].name_keyIndex}`}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.entryDateTime}</TableCell>
-              <TableCell>{row.ltp}</TableCell>
+              <TableCell>{data[key].name}</TableCell>
+              <TableCell>{data[key].entryTime}</TableCell>
+              <TableCell>{data[key].ltp}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -448,16 +149,17 @@ const OpportunitiesTable = () => {
   );
 };
 
-const PortfolioTabPanel = ({ tabVal }) => {
+const PortfolioTabPanel = ({ tabVal, data }) => {
+  // return <div>test</div>;
   switch (tabVal) {
     case 0:
-      return <HoldingsTable />;
+      return <HoldingsTable data={data} />;
     case 1:
-      return <PositionsTable />;
+      return <PositionsTable data={data} />;
     case 2:
-      return <OpportunitiesTable />;
+      return <OpportunitiesTable data={data} />;
     default:
-      return <HoldingsTable />;
+      return <HoldingsTable data={data} />;
   }
 };
 
@@ -497,8 +199,6 @@ const PortfolioTabs = ({ tabVal, tabValSet, tabNameSet }) => {
   );
 };
 
-const fetchParams = { mode: "cors" };
-
 const Portfolio = () => {
   const [tabVal, setTabVal] = useState(0);
   const [tabName, setTabName] = useState("");
@@ -506,12 +206,14 @@ const Portfolio = () => {
   const onNext = useCallback(
     async (res) => {
       try {
-        const response = await res;
-        const restext = await res.text();
+        const restxt = await res.text();
+        const jsonData = JSON.parse(restxt.replace("data:", ""));
 
-        console.log("response text", JSON.parse(restext.replace("data:", "")));
-        // Now you can access the individual properties of the jsonData object
-        // setData(jsonData);
+        //Now you can access the individual properties of the jsonData object
+        setData((prevRespData) => ({
+          ...prevRespData,
+          [jsonData.name]: jsonData,
+        }));
       } catch (error) {
         console.error("Error parsing JSON:", error);
         // Handle the error, for example, set a default value for data or show an error message.
@@ -522,31 +224,32 @@ const Portfolio = () => {
   );
 
   useStream(
-    "https://a910-2401-4900-1cc4-fc45-98b6-dfd2-28f6-60e9.ngrok.io/v1/shorttermtrading/live/positions",
+    "https://18ff-2401-4900-1f29-2ddf-6ea0-1a9c-8605-e31f.ngrok.io/v1/shorttermtrading/live/positions",
     { onNext }
   );
 
   return (
-    // <div className="portfolio">
-    //   <Paper sx={{ padding: "1rem" }} elevation={1}>
-    //     <Grid container>
-    //       <Grid item xs={8}>
-    //         <span>{tabName} </span>
-    //       </Grid>
-    //       <Grid item xs={4}>
-    //         <PortfolioTabs
-    //           tabVal={tabVal}
-    //           tabValSet={setTabVal}
-    //           tabNameSet={setTabName}
-    //         />
-    //       </Grid>
-    //       <Grid item xs={12}>
-    //         <PortfolioTabPanel tabVal={tabVal} />
-    //       </Grid>
-    //     </Grid>
-    //   </Paper>
-    // </div>
-    <div>test</div>
+    data && (
+      <div className="portfolio">
+        <Paper sx={{ padding: "1rem" }} elevation={1}>
+          <Grid container>
+            <Grid item xs={8}>
+              <span>{tabName} </span>
+            </Grid>
+            <Grid item xs={4}>
+              <PortfolioTabs
+                tabVal={tabVal}
+                tabValSet={setTabVal}
+                tabNameSet={setTabName}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <PortfolioTabPanel tabVal={tabVal} data={data} />
+            </Grid>
+          </Grid>
+        </Paper>
+      </div>
+    )
   );
 };
 
