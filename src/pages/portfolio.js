@@ -18,139 +18,148 @@ import { sampleData } from "../mockdata/sampledata";
 
 const HoldingsTable = ({ data }) => {
   return (
-    <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead className="thead">
-          <TableRow
-            sx={{
-              "&:last-child td, &:last-child th": { border: 0 },
-            }}
-          >
-            <TableCell>Name</TableCell>
-            <TableCell>Entry date time</TableCell>
-            <TableCell>Exit date time</TableCell>
-            <TableCell>Qty</TableCell>
-            <TableCell>LTP</TableCell>
-            <TableCell>Entry price</TableCell>
-            <TableCell>Exit price</TableCell>
-            <TableCell>Avg price</TableCell>
-            <TableCell>Age</TableCell>
-            <TableCell>Transaction type</TableCell>
-            <TableCell>Staus</TableCell>
-            <TableCell>Action</TableCell>
-            <TableCell>P&L</TableCell>
-          </TableRow>
-        </TableHead>
-
-        <TableBody>
-          {Object.keys(data).map((key, keyIndex) => (
+    data &&
+    Object.keys(data).length > 0 && (
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="thead">
             <TableRow
-              key={`${data[key].name_keyIndex}`}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+              }}
             >
-              <TableCell>{data[key].name}</TableCell>
-              <TableCell>{data[key].entryTime}</TableCell>
-              <TableCell>{data[key].exitTime}</TableCell>
-              <TableCell>{data[key].netQty}</TableCell>
-              <TableCell>{data[key].ltp}</TableCell>
-              <TableCell>{data[key].avgPrice}</TableCell>
-              <TableCell>{data[key].avgPrice}</TableCell>
-              <TableCell>{data[key].avgPrice}</TableCell>
-              <TableCell>{data[key].token}</TableCell>
-              <TableCell>{data[key].status}</TableCell>
-              <TableCell>{data[key].status}</TableCell>
-              <TableCell>{data[key].posInfo}</TableCell>
-              <TableCell>{data[key].pnl}</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Entry date time</TableCell>
+              <TableCell>Exit date time</TableCell>
+              <TableCell>Qty</TableCell>
+              <TableCell>LTP</TableCell>
+              <TableCell>Entry price</TableCell>
+              <TableCell>Exit price</TableCell>
+              <TableCell>Avg price</TableCell>
+              <TableCell>Age</TableCell>
+              <TableCell>Transaction type</TableCell>
+              <TableCell>Staus</TableCell>
+              <TableCell>Action</TableCell>
+              <TableCell>P&L</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+
+          <TableBody>
+            {Object.keys(data).map((key, keyIndex) => (
+              <TableRow
+                key={`${data["name"]}_${keyIndex}`}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{data[key].name}</TableCell>
+                <TableCell>{data[key].entryTime}</TableCell>
+                <TableCell>{data[key].exitTime}</TableCell>
+                <TableCell>{data[key].netQty}</TableCell>
+                <TableCell>{data[key].ltp}</TableCell>
+                <TableCell>{data[key].avgPrice}</TableCell>
+                <TableCell>{data[key].avgPrices}</TableCell>
+                <TableCell>{data[key].avgPrices}</TableCell>
+                <TableCell>{data[key].token}</TableCell>
+                <TableCell>{data[key].status}</TableCell>
+                <TableCell>{data[key].status}</TableCell>
+                <TableCell>{data[key].posInfo}</TableCell>
+                <TableCell>{data[key].pnl}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    )
   );
 };
+
 const PositionsTable = ({ data }) => {
   return (
-    <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead className="thead">
-          <TableRow
-            sx={{
-              "&:last-child td, &:last-child th": { border: 0 },
-            }}
-          >
-            <TableCell>Name</TableCell>
-            <TableCell>Qty</TableCell>
-            <TableCell>LTP</TableCell>
-            <TableCell>Entry price</TableCell>
-            <TableCell>Exit price</TableCell>
-            <TableCell>Avg price</TableCell>
-            <TableCell>Age</TableCell>
-            <TableCell>Transaction type</TableCell>
-            <TableCell>Staus</TableCell>
-            <TableCell>Action</TableCell>
-            <TableCell>P&L</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {Object.keys(data).map((key, keyIndex) => (
+    data &&
+    Object.keys(data).length > 0 && (
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="thead">
             <TableRow
-              key={`${data[key].name_keyIndex}`}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+              }}
             >
-              <TableCell>{data[key].name}</TableCell>
-              <TableCell>{data[key].qty}</TableCell>
-              <TableCell>{data[key].ltp}</TableCell>
-              <TableCell>{data[key].entryPrice}</TableCell>
-              <TableCell>{data[key].entryPrice}</TableCell>
-              <TableCell>{data[key].avgPrice}</TableCell>
-              <TableCell>{data[key].pts}</TableCell>
-              <TableCell>{data[key].transaction}</TableCell>
-              <TableCell>{data[key].transaction}</TableCell>
-              <TableCell>{data[key].action}</TableCell>
-              <TableCell>{data[key].pnl}</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Qty</TableCell>
+              <TableCell>LTP</TableCell>
+              <TableCell>Entry price</TableCell>
+              <TableCell>Exit price</TableCell>
+              <TableCell>Avg price</TableCell>
+              <TableCell>Age</TableCell>
+              <TableCell>Transaction type</TableCell>
+              <TableCell>Staus</TableCell>
+              <TableCell>Action</TableCell>
+              <TableCell>P&L</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {Object.keys(data).map((key, keyIndex) => (
+              <TableRow
+                key={`${data[key].name}_${keyIndex}`}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{data[key].name}</TableCell>
+                <TableCell>{data[key].qty}</TableCell>
+                <TableCell>{data[key].ltp}</TableCell>
+                <TableCell>{data[key].entryPrice}</TableCell>
+                <TableCell>{data[key].entryPrice}</TableCell>
+                <TableCell>{data[key].avgPrice}</TableCell>
+                <TableCell>{data[key].pts}</TableCell>
+                <TableCell>{data[key].transaction}</TableCell>
+                <TableCell>{data[key].transaction}</TableCell>
+                <TableCell>{data[key].action}</TableCell>
+                <TableCell>{data[key].pnl}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    )
   );
 };
 
 const OpportunitiesTable = ({ data }) => {
   return (
-    <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead className="thead">
-          <TableRow
-            sx={{
-              "&:last-child td, &:last-child th": { border: 0 },
-            }}
-          >
-            <TableCell>Instrument</TableCell>
-            <TableCell>Date & time</TableCell>
-            <TableCell>LTP</TableCell>
-          </TableRow>
-        </TableHead>
-
-        <TableBody>
-          {Object.keys(data).map((key, keyIndex) => (
+    data &&
+    Object.keys(data).length > 0 && (
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="thead">
             <TableRow
-              key={`${data[key].name_keyIndex}`}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+              }}
             >
-              <TableCell>{data[key].name}</TableCell>
-              <TableCell>{data[key].entryTime}</TableCell>
-              <TableCell>{data[key].ltp}</TableCell>
+              <TableCell>Instrument</TableCell>
+              <TableCell>Date & time</TableCell>
+              <TableCell>LTP</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+
+          <TableBody>
+            {Object.keys(data).map((key, keyIndex) => (
+              <TableRow
+                key={`${data[key].name}_${keyIndex}`}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{data[key].name}</TableCell>
+                <TableCell>{data[key].entryTime}</TableCell>
+                <TableCell>{data[key].ltp}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    )
   );
 };
 
 const PortfolioTabPanel = ({ tabVal, data }) => {
-  // return <div>test</div>;
   switch (tabVal) {
     case 0:
       return <HoldingsTable data={data} />;
@@ -203,17 +212,24 @@ const Portfolio = () => {
   const [tabVal, setTabVal] = useState(0);
   const [tabName, setTabName] = useState("");
   const [data, setData] = useState({});
-  const onNext = useCallback(
+
+  const handleStreamData = useCallback(
     async (res) => {
       try {
         const restxt = await res.text();
-        const jsonData = JSON.parse(restxt.replace("data:", ""));
-
-        //Now you can access the individual properties of the jsonData object
-        setData((prevRespData) => ({
-          ...prevRespData,
-          [jsonData.name]: jsonData,
-        }));
+        restxt = restxt.replace("data:", "");
+        if (restxt) {
+          const jsonData = JSON.parse(restxt);
+          //Now you can access the individual properties of the jsonData object
+          if (jsonData) {
+            setData((prevData) => {
+              return {
+                ...prevData, // Copy previous data
+                ...jsonData, // Merge in the new data
+              };
+            });
+          }
+        }
       } catch (error) {
         console.error("Error parsing JSON:", error);
         // Handle the error, for example, set a default value for data or show an error message.
@@ -223,9 +239,15 @@ const Portfolio = () => {
     [setData]
   );
 
+  const handleStreamError = useCallback((error) => {
+    console.error("Error streaming data:", error);
+    setIsLoading(false);
+    // Handle error as needed, e.g., show an error message to the user
+  }, []);
+
   useStream(
-    "https://18ff-2401-4900-1f29-2ddf-6ea0-1a9c-8605-e31f.ngrok.io/v1/shorttermtrading/live/positions",
-    { onNext }
+    "https://9ad8-2401-4900-1cc5-1883-ff2-1c57-4e92-d3be.ngrok.io/v1/shorttermtrading/live/positions4",
+    { onNext: handleStreamData, onError: handleStreamError }
   );
 
   return (
