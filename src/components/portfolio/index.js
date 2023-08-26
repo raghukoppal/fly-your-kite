@@ -48,15 +48,15 @@ export const PortfolioTabPanel = ({ tabVal, data }) => {
     case 0:
       return <HoldingsTable data={data} />;
     case 1:
-      return <PositionsTable />;
+      return <PositionsTable data={data} />;
     case 2:
-      return <OpportunitiesTable />;
+      return <OpportunitiesTable data={data} />;
     default:
-      return <HoldingsTable />;
+      return <HoldingsTable data={data} />;
   }
 };
 
-const HoldingsTable = ({ data }) => {
+export const HoldingsTable = ({ data }) => {
   return (
     data && (
       <TableContainer>
@@ -132,10 +132,87 @@ const HoldingsTable = ({ data }) => {
   );
 };
 
-const PositionsTable = () => {
-  return <div>PositionsTable</div>;
+export const PositionsTable = ({ data }) => {
+  return (
+    data && (
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="thead">
+            <TableRow
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+              }}
+            >
+              <TableCell>Name</TableCell>
+              <TableCell>Qty</TableCell>
+              <TableCell>LTP</TableCell>
+              <TableCell>Entry price</TableCell>
+              <TableCell>Exit price</TableCell>
+              <TableCell>Avg price</TableCell>
+              <TableCell>Age</TableCell>
+              <TableCell>Transaction type</TableCell>
+              <TableCell>Staus</TableCell>
+              <TableCell>Action</TableCell>
+              <TableCell>P&L</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {Object.keys(data).map((key, keyIndex) => (
+              <TableRow
+                key={`${data[key].name}_${keyIndex}`}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{data[key].name}</TableCell>
+                <TableCell>{data[key].qty}</TableCell>
+                <TableCell>{data[key].ltp}</TableCell>
+                <TableCell>{data[key].entryPrice}</TableCell>
+                <TableCell>{data[key].entryPrice}</TableCell>
+                <TableCell>{data[key].avgPrice}</TableCell>
+                <TableCell>{data[key].pts}</TableCell>
+                <TableCell>{data[key].transaction}</TableCell>
+                <TableCell>{data[key].transaction}</TableCell>
+                <TableCell>{data[key].action}</TableCell>
+                <TableCell>{data[key].pnl}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    )
+  );
 };
 
-const OpportunitiesTable = () => {
-  return <div>Opportunities Table</div>;
+export const OpportunitiesTable = ({ data }) => {
+  return (
+    data && (
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="thead">
+            <TableRow
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+              }}
+            >
+              <TableCell>Instrument</TableCell>
+              <TableCell>Date & time</TableCell>
+              <TableCell>LTP</TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            {Object.keys(data).map((key, keyIndex) => (
+              <TableRow
+                key={`${data[key].name}_${keyIndex}`}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{data[key].name}</TableCell>
+                <TableCell>{data[key].entryTime}</TableCell>
+                <TableCell>{data[key].ltp}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    )
+  );
 };
