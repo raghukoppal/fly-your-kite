@@ -172,7 +172,9 @@ export const PositionsTable = ({ data }) => {
                 <TableCell>{data[key].transaction}</TableCell>
                 <TableCell>{data[key].transaction}</TableCell>
                 <TableCell>{data[key].action}</TableCell>
-                <TableCell>{data[key].pnl}</TableCell>
+                <TableCell className={data[key].pnl > 0 ? "success" : "error"}>
+                  {data[key].pnl}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
